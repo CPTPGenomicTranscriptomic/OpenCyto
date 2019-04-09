@@ -4,7 +4,7 @@ Clean cytometry data using FlowAI R package through a new Rshiny interface.
 
 *****
 
-#	<font color="red">Launch FlowAIAll directly from R and GitHub (preferred approach)</font>
+Launch FlowAIAll directly from R and GitHub (preferred approach)
 
 User can choose to run FlowAIAll installed locally for a more preferable experience.
 
