@@ -20,10 +20,14 @@ Start an R session using RStudio and run these lines:
 ```
 install.packages("shiny")  
 install.packages("data.table")
+install.packages("xtable")
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install("flowAI", version = "3.8")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("openCyto", version = "3.8")
 
 # try http:// if https:// URLs are not supported   
 #source("https://bioconductor.org/biocLite.R")  
@@ -34,88 +38,7 @@ BiocManager::install("flowAI", version = "3.8")
 
 Start an R session using RStudio and run these lines:  
 ```
-shiny::runGitHub("shinyCircos", "venyao")  
+shiny::runGitHub("FlowAIAll", "mlebeur")
 ```
-This command will download the code of shinyCircos from GitHub to a temporary directory of your computer and then launch the shinyCircos app in the web browser. Once the web browser was closed, the downloaded code of shinyCircos would be deleted from your computer. Next time when you run this command in RStudio, it will download the source code of shinyCircos from GitHub to a temporary directory again. This process is frustrating since it takes some time to download the code of shinyCircos from GitHub.  
+This command will download the code of FlowAIAll from GitHub to a temporary directory of your computer and then launch the FlowAIAll app in the web browser. Once the web browser was closed, the downloaded code of shinyCircos would be deleted from your computer. Next time when you run this command in RStudio, it will download the source code of FlowAIAll from GitHub to a temporary directory again. 
 
-Users are suggested to download the source code of shinyCircos from GitHub to a fixed directory of your computer, such as 'E:\\apps' on Windows. Following the procedure illustrated in the following figure, a zip file named 'shinyCircos-master.zip' would be downloaded to the disk of your computer. Move this file to 'E:\\apps' and unzip this file. Then a directory named 'shinyCircos-master' would be generated in 'E:\\apps'. The scripts 'server.R' and 'ui.R' could be found in 'E:\\apps\\shinyCircos-master'.  
-<br>
-<img src="shinyCircos.png" width="890"/>  
-<br>
-
-Then you can start the shinyCircos app by running these lines in RStudio.  
-```
-library(shiny)
-runApp("E:/apps/shinyCircos-master", launch.browser = TRUE)
-```
-
-*****
-
-#	Deploy shinyCircos on local or web Linux server
-
-**Step 1: Install R**  
-
-Please check CRAN (<a href="https://cran.r-project.org/" target="_blank">https://cran.r-project.org/</a>) for the installation of R.
-
-**Step 2: Install the R Shiny package and other packages required by shinyCircos**  
-
-Start an R session and run these lines in R:  
-```
-install.packages("shiny")  
-install.packages("circlize")  
-install.packages("RColorBrewer")
-install.packages("data.table")
-install.packages("RLumShiny")  
-## try http:// if https:// URLs are not supported  
-source("https://bioconductor.org/biocLite.R")  
-biocLite("GenomicRanges")  
-```
-
-For more information, please check the following pages:  
-<a href="https://cran.r-project.org/web/packages/shiny/index.html" target="_blank">https://cran.r-project.org/web/packages/shiny/index.html</a>  
-<a href="https://github.com/rstudio/shiny" target="_blank">https://github.com/rstudio/shiny</a>  
-<a href="https://shiny.rstudio.com/" target="_blank">https://shiny.rstudio.com/</a>  
-
-**Step 3: Install Shiny-Server**
-
-Please check the following pages for the installation of shiny-server.  
-<a href="https://www.rstudio.com/products/shiny/download-server/" target="_blank">https://www.rstudio.com/products/shiny/download-server/</a>  
-<a href="https://github.com/rstudio/shiny-server/wiki/Building-Shiny-Server-from-Source" target="_blank">https://github.com/rstudio/shiny-server/wiki/Building-Shiny-Server-from-Source</a>  
-
-**Step 4: Upload files of shinyCircos**
-
-Put the directory containing the code and data of shinyCircos to /srv/shiny-server.  
-
-**Step 5: Configure shiny server (/etc/shiny-server/shiny-server.conf)**
-
-```
-# Define the user to spawn R Shiny processes
-run_as shiny;
-
-# Define a top-level server which will listen on a port
-server {  
-  # Use port 3838  
-  listen 3838;  
-  # Define the location available at the base URL  
-  location /shinycircos {  
-    # Directory containing the code and data of shinyCircos  
-    app_dir /srv/shiny-server/shinyCircos;  
-    # Directory to store the log files  
-    log_dir /var/log/shiny-server;  
-  }  
-}  
-```
-
-**Step 6: Change the owner of the shinyCircos directory**
-
-```
-$ chown -R shiny /srv/shiny-server/shinyCircos  
-```
-
-**Step 7: Start Shiny-Server**
-
-```
-$ start shiny-server  
-```
-
-Now, the shinyCircos app is available at <a href="http://IPAddressOfTheServer:3838/shinycircos/" target="_blank">http://IPAddressOfTheServer:3838/shinycircos/</a>.  
