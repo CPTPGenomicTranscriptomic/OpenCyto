@@ -19,12 +19,15 @@ Please check <a href="https://www.rstudio.com/" target="_blank">https://www.rstu
 Start an R session using RStudio and run these lines:  
 ```
 install.packages("shiny")  
+
 install.packages("data.table")
+
 install.packages("xtable")
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install("flowAI", version = "3.8")
+
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install("openCyto", version = "3.8")
