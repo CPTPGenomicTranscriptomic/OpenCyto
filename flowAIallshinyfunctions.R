@@ -1,3 +1,4 @@
+options(warn=-1)
 #' Automatic quality control of flow cytometry data.
 #'
 #' For a set of FCS files, \emph{flow_auto_qc} performs a complete and automatic
