@@ -43,5 +43,64 @@ Start an R session using RStudio and run these lines:
 ```
 shiny::runGitHub("FlowAIAll", "mlebeur")
 ```
-This command will download the code of FlowAIAll from GitHub to a temporary directory of your computer and then launch the FlowAIAll app in the web browser. Once the web browser was closed, the downloaded code of shinyCircos would be deleted from your computer. Next time when you run this command in RStudio, it will download the source code of FlowAIAll from GitHub to a temporary directory again. 
+This command will download the code of FlowAIAll from GitHub to a temporary directory of your computer and then launch the FlowAIAll app in the web browser. Once the web browser was closed, the downloaded code of FlowAIAll would be deleted from your computer. Next time when you run this command in RStudio, it will download the source code of FlowAIAll from GitHub to a temporary directory again. 
+
+
+## Step 4: Choose your analysis set up  
+
+**1. Choose your output directory:**
+
+Choose the operating system (Windows pr MAC) in the top rigth corner.
+
+The from root select the output directory.
+
+The application can crash (everything in grey, no interactivity) if you choose the wrong operating system, if you choose a directory where you haven't some rigths and others...
+
+Experts can try others Volumes (as currentDirectory, home, etc...) but they have to use the application on local.
+
+
+**2. Choose your output options:**
+
+  * Write file with high quality events only ("_hQC.fcs") will write a fcs file without any low quality events predicted by flowAI => biological events.
+  
+  * Write file with low quality events only ("_lQC.fcs") will write a fcs file without any high quality events predicted by flowAI => artefactual/technical/... events.
+  
+  * Write file with both low (remove_from_all/QC < 10,000) and high (remove_from_all/QC > 10,000) quality events ("_QC.fcs"). This file contains a new parameter (visible on flowJo) which allows the distinction between the low and the high quality events.
+  
+
+**3. Upload your FCS files:**
+
+You can upload from one to multiple \*.fcs files.
+
+The files must have the .fcs extension to appear in the selection browser.
+
+Be aware that The application is limited to 500Mo of RAM.
+
+Multiple runs can be preferable in case of big data analyses.
+
+The blue progress bar should move until the message \"upload complete\" appears.
+
+
+**4. Wait for the computation:**
+
+Once the upload competed a progress boxe should appears in the rigth-bottom corner. It indicates that the application is running and which input files is processed.
+
+
+**5. The results:**
+
+Once the progress boxes have disappeared.
+
+The inputs files should be listed below \"Remember your input files were:\".
+
+The ouput directory should appears below \"Remember your output directory was\".
+
+This message \"You can look at "resultsQC" directory to see the results!\" should be print below \"If the next line is in red ... it's your problem... not mine, YOUR'S... Good luck!\".
+
+If any Red word or line appears the apllication has encountered an error. Don't hesitate to look at the Rstudio console to track the problem.
+
+The results should be located at the output directory.
+
+The webpage should look like this!
+
+![alt text](https://github.com/mlebeur/FlowAIAll/blob/master/FlowAI_interface.png)
 
