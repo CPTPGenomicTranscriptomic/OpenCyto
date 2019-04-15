@@ -53,8 +53,7 @@ br(),
       h3("Please choose your output options:"),
       checkboxInput("output_hQC", "Write file with high quality events only (\"_hQC.fcs\")", value = TRUE),
       checkboxInput("output_lQC", "Write file with low quality events only (\"_lQC.fcs\")", value = FALSE),
-      checkboxInput("output_QC", "Write file with both low (GoodVsBad > 10,000) and high (GoodVsBad < 10,000) quality events (\"_QC.fcs\")", value = TRUE)
-    ),
+      checkboxInput("output_QC", "Write file with both low (remove_from_all/QC < 10,000) and high (remove_from_all/QC > 10,000) quality events (\"_QC.fcs\")", value = TRUE)    ),
     
     mainPanel(
       h4("flowAI is able to perform an automatic or interactive quality control on FCS data acquired using flow cytometry instruments. By evaluating three different properties: 1) flow rate, 2) signal acquisition, 3) dynamic range, the quality control enables the detection and removal of anomalies."),
