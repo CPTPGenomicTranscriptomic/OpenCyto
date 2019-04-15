@@ -35,8 +35,7 @@ ui <- fluidPage(
   tags$head(
     tags$style(".title {margin: auto; width: 800px; font-size-adjust: 1.3}")
   ),
-  tags$div(class="title", titlePanel("Shiny FlowClean")),
-#  titlePanel("FlowClean"),
+  tags$div(class="title", titlePanel("Shiny FlowAI")),
 br(),
   headerPanel(
     list(HTML('<img src="Logo_cptp.png"/>'), HTML('<a href="https://www.cptp.inserm.fr/en/technical-platforms/genomic-and-transcriptomic/">Genomic and transcriptomic plateform</a>'), HTML('<img src="Logo_inserm.png"/>')),
