@@ -28,10 +28,52 @@ server <- function(input, output) {
     print(input$Files$name)
   })
   
+  shinyDirChoose(input, 'dir', roots = c(rootWindows="C:/",currentDirectory='./',rootMAC="/", home="~/", workingDirectory=getwd()))
+  dir <- reactive(input$dir)
+
+  output$dir2 <- renderPrint({
+    req(input$dir)
+    if(input$dir$root[1] == "currentDirectory" || input$dir$root[1] == "workingDirectory"){
+      firstBox="."
+    }
+    if(input$dir$root[1] == "rootMAC"){
+      firstBox=""
+    }
+    if(input$dir$root[1] == "rootWindows"){
+      firstBox="C:"
+    }
+    if(input$dir$root[1] == "home"){
+      firstBox="~"
+    }
+    print(paste0(firstBox,paste0(input$dir$path,collapse="/")))
+  })
+  
   output$Samples <- renderText({
     req(input$Files)
+    req(input$dir)
     withProgress(message = 'Data cleaning in progress:', value = 0, {
       i=1
+      #Output directory
+      if(input$dir$root[1] == "currentDirectory" || input$dir$root[1] == "workingDirectory"){
+        firstBox="."
+      }
+      if(input$dir$root[1] == "rootMAC"){
+        firstBox=""
+      }
+      if(input$dir$root[1] == "rootWindows"){
+        firstBox="C:"
+      }
+      if(input$dir$root[1] == "home"){
+        firstBox="~"
+      }
+      saveddirname=paste0(firstBox,paste0(input$dir$path,collapse="/"))
+      print(paste0("The output directory is:",saveddirname))
+      
+      #Save current directory and change to output directory
+      savedcurrentdirectory = getwd()
+      setwd(saveddirname)
+      print(paste0("Change current to output directory:",saveddirname))
+
       for (fcs in input$Files$datapath) {
         #flowautoQC
         #print(sampleNames(data()))
@@ -89,6 +131,7 @@ server <- function(input, output) {
         incProgress(1/(length(input$Files$name)), detail = paste("Working on the file:", input$Files$name[i]))
         i=i+1
       }
+    setwd(savedcurrentdirectory)
     print("If this message appears the program have reach the end!")
     print("You can look at \"resultsQC\" directory to see the results!")
     #shinyDirChoose(input, 'outputdir', roots = getVolumes())
