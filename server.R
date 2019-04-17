@@ -25,6 +25,7 @@ library(shiny)
 library(shinyFiles)
 library(openCyto)
 library(xtable)
+library(flowAI)
 source("flowAIallshinyfunctions.R")
 print(sessionInfo())
 
