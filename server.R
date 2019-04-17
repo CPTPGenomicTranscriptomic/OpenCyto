@@ -14,8 +14,8 @@ if (!require("xtable"))
 if (!requireNamespace("BiocManager", quietly = TRUE))
 install.packages("BiocManager")
 
-#if (!require("flowAI"))
-#BiocManager::install("flowAI", version = "3.8")
+if (!require("flowAI"))
+BiocManager::install("flowAI")
 
 if (!require("openCyto"))
 BiocManager::install("openCyto")
