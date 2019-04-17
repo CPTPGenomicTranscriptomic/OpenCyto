@@ -20,21 +20,6 @@ Start an R session using RStudio and run these lines:
 ```
 install.packages("shiny")  
 
-install.packages("data.table")
-
-install.packages("xtable")
-
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-BiocManager::install("flowAI", version = "3.8")
-
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-BiocManager::install("openCyto", version = "3.8")
-
-# try http:// if https:// URLs are not supported   
-#source("https://bioconductor.org/biocLite.R")  
-#biocLite("GenomicRanges")
 ```
 
 **Step 3: Start the app**  
@@ -83,12 +68,12 @@ The blue progress bar should move until the message \"upload complete\" appears.
 
 **4. Wait for the computation:**
 
-Once the upload competed a progress boxe should appears in the rigth-bottom corner. It indicates that the application is running and which input files is processed.
+Once the upload competed a progress boxe should appears in the rigth-bottom corner. It indicates that the application is running and which input file is processed.
 
 
 **5. The results:**
 
-Once the progress boxes have disappeared.
+Once the progress box has disappeared.
 
 The inputs files should be listed below \"Remember your input files were:\".
 
