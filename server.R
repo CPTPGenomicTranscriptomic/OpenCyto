@@ -22,6 +22,7 @@ BiocManager::install("openCyto")
 
 
 library(shiny)
+library(shinyFiles)
 library(openCyto)
 library(xtable)
 source("flowAIallshinyfunctions.R")
