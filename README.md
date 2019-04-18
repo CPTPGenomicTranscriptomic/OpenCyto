@@ -25,7 +25,7 @@ install.packages("shiny")
 
 Start an R session using RStudio and run these lines:  
 ```
-shiny::runGitHub("FlowAIAll", "mlebeur")
+shiny::runGitHub("FlowAIAll", "CPTPGenomicTranscriptomic")
 ```
 This command will download the code of FlowAIAll from GitHub to a temporary directory of your computer and then launch the FlowAIAll app in the web browser. Once the web browser was closed, the downloaded code of FlowAIAll would be deleted from your computer. Next time when you run this command in RStudio, it will download the source code of FlowAIAll from GitHub to a temporary directory again. 
 
@@ -86,5 +86,5 @@ The results should be located at the output directory.
 
 The webpage should look like this!
 
-![alt text](https://github.com/mlebeur/FlowAIAll/blob/master/FlowAI_interface.png)
+![alt text](https://github.com/CPTPGenomicTranscriptomic/FlowAIAll/blob/master/FlowAI_interface.png)
 
