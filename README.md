@@ -16,14 +16,14 @@ Please check <a href="https://www.rstudio.com/" target="_blank">https://www.rstu
 
 **Step 2: Install the R Shiny package and other packages required by shinyCircos**
 
-Start an R session using RStudio and run these lines:  
+Start an R session using RStudio and run this line:  
 ```
 if (!require("shiny")){install.packages("shiny")}  
 ```
 
 **Step 3: Start the app**  
 
-Start an R session using RStudio and run these lines:  
+Start an R session using RStudio and run this line:  
 ```
 shiny::runGitHub("FlowAIAll", "CPTPGenomicTranscriptomic")
 ```
