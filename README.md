@@ -18,7 +18,7 @@ Please check <a href="https://www.rstudio.com/" target="_blank">https://www.rstu
 
 Start an R session using RStudio and run these lines:  
 ```
-install.packages("shiny")  
+if (!require("shiny")){install.packages("shiny")}  
 ```
 
 **Step 3: Start the app**  
