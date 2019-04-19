@@ -14,7 +14,7 @@ Before running the app you will need to have R and RStudio installed (tested wit
 Please check CRAN (<a href="https://cran.r-project.org/" target="_blank">https://cran.r-project.org/</a>) for the installation of R.  
 Please check <a href="https://www.rstudio.com/" target="_blank">https://www.rstudio.com/</a> for the installation of RStudio.  
 
-**Step 2: Install the R Shiny package and other packages required by shinyCircos**
+**Step 2: Install the R Shiny package and other packages required by FlowAIAll**
 
 Start an R session using RStudio and run this line:  
 ```
