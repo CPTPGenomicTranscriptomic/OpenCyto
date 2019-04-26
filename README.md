@@ -100,3 +100,7 @@ The webpage should look like this!
 
 ![alt text](https://github.com/CPTPGenomicTranscriptomic/FlowAIAll/blob/master/FlowAI_interface.png)
 
+
+## Comments
+
+The package flowAI seems to filtered much more data than flowClean but it's faster.
