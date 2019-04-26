@@ -21,12 +21,22 @@ Start an R session using RStudio and run this line:
 if (!require("shiny")){install.packages("shiny")}  
 ```
 
+Rstudio (in the console) can ask about updates.
+
+If a message like: "Update all/some/none?" appears in the Rstudio console just press "n" and enter.
+
+
 **Step 3: Start the app**  
 
 Start an R session using RStudio and run this line:  
 ```
 shiny::runGitHub("FlowAIAll", "CPTPGenomicTranscriptomic")
 ```
+
+Rstudio (in the console) can ask about updates.
+
+If a message like: "Update all/some/none?" appears in the Rstudio console just press "n" and enter (can happen several times).
+
 This command will download the code of FlowAIAll from GitHub to a temporary directory of your computer and then launch the FlowAIAll app in the web browser. Once the web browser was closed, the downloaded code of FlowAIAll would be deleted from your computer. Next time when you run this command in RStudio, it will download the source code of FlowAIAll from GitHub to a temporary directory again. 
 
 
@@ -57,6 +67,8 @@ Experts can try others Volumes (as currentDirectory, home, etc...) but they have
 You can upload from one to multiple \*.fcs files.
 
 The files must have the .fcs extension to appear in the selection browser.
+
+One of the parameter should be time/Time/TIME else the application will run forever.
 
 Be aware that The application is limited to 500Mo of RAM.
 
