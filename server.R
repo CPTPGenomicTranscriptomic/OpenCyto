@@ -107,11 +107,11 @@ server <- function(input, output) {
       gs
         
       #Load the gating strategy
-      gt_tcell <- gatingTemplate(input$gatingstrategy$name)
+      gt_tcell <- gatingTemplate(input$gatingstrategy$datapath)
       #plot(gt_tcell)
 
       #Load the workspace
-      ws <- openWorkspace(input$workspace$name)
+      ws <- openWorkspace(input$workspace$datapath)
       gs <- parseWorkspace(ws)
       gh <- gs[[1]]
       #plot(gh)
