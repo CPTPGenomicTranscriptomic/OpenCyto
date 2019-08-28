@@ -71,6 +71,7 @@ server <- function(input, output) {
     req(input$Files)
     req(input$dir)
     withProgress(message = "Data cleaning in progress:", value = 0, {
+    withProgress(message = "Data cleaning in progress:", value = 0, {
       i=1
       #Output directory
       if(input$dir$root[1] == "currentDirectory" || input$dir$root[1] == "workingDirectory"){
@@ -95,7 +96,8 @@ server <- function(input, output) {
 
       #Foreach of the input FCS file
       for (fcs in input$Files$datapath) {
-         incProgress(1/(length(input$Files$name)), detail = HTML(paste0("Working on the file: ", input$Files$name[i]," ", sample(quotes,1))))
+         incProgress(1/(length(input$Files$name)), detail = paste0("Working on the file: ", input$Files$name[i]))
+         incProgress(1/(length(input$Files$name)), detail = sample(quotes,1))
 
         #run FlowAI
         if(input$output_QC & input$output_hQC & input$output_lQC){
@@ -127,6 +129,7 @@ server <- function(input, output) {
     print("If this message appears the program have reach the end!")
     print("You can look at \"resultsQC\" directory to see the results!")
     })
+  })
   })
 }
 
