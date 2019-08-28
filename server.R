@@ -76,7 +76,7 @@ server <- function(input, output) {
     req(input$gatingstrategy)
     req(input$Files)
     req(input$dir)
-    #withProgress(message = "Automatic gating in progress:", value = 0, {
+    withProgress(message = "Automatic gating in progress:", value = 0, {
       i=1
       #Output directory
       if(input$dir$root[1] == "currentDirectory" || input$dir$root[1] == "workingDirectory"){
@@ -137,9 +137,8 @@ server <- function(input, output) {
       stats  =  getPopStats(gs)
       write.csv(stats, file="population_statistics.csv", row.names=FALSE)
       
-      #incProgress(1/(length(input$Files$name)), detail = paste0("Working on the file: ", input$Files$name[i], "     ", sample(quotes,1)))
-      #incProgress(1/1), detail = paste0("Working on the file: ", input$Files$name[1], "     ", sample(quotes,1)))
-    #})
+      incProgress(1/(length(input$Files$name)), detail = paste0("Working on the file: ", input$Files$name[i], "     ", sample(quotes,1)))
+     })
     setwd(savedcurrentdirectory)
     print("If this message appears the program have reach the end!")
     print("You can look at \"resultsQC\" directory to see the results!")
