@@ -29,6 +29,11 @@ library(flowAI)
 source("flowAIallshinyfunctions.R")
 print(sessionInfo())
 
+quotes = c("C'est pas faux !")
+authors = c("Alexandre Astier")
+quotes = data.frame(quotes,authors)
+quotes = paste0("\"",quotes$quotes,"\"", " -- ",quotes$author,".       ")
+
 
 server <- function(input, output) {
   source("flowAIallshinyfunctions.R")
@@ -65,7 +70,7 @@ server <- function(input, output) {
   output$Samples <- renderText({
     req(input$Files)
     req(input$dir)
-    withProgress(message = 'Data cleaning in progress:', value = 0, {
+    withProgress(message = sample(quotes,1), detail = 'Data cleaning in progress:', value = 0, {
       i=1
       #Output directory
       if(input$dir$root[1] == "currentDirectory" || input$dir$root[1] == "workingDirectory"){
