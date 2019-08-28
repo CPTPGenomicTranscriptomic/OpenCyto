@@ -138,10 +138,11 @@ server <- function(input, output) {
       write.csv(stats, file="population_statistics.csv", row.names=FALSE)
       
       incProgress(1/(length(input$Files$name)), detail = paste0("Working on the file: ", input$Files$name[i], "     ", sample(quotes,1)))
-     })
+
     setwd(savedcurrentdirectory)
     print("If this message appears the program have reach the end!")
     print("You can look at \"resultsQC\" directory to see the results!")
+           })
     })
   })
 }
