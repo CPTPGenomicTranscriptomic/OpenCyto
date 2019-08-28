@@ -95,6 +95,8 @@ server <- function(input, output) {
 
       #Foreach of the input FCS file
       for (fcs in input$Files$datapath) {
+         incProgress(1/(length(input$Files$name)), detail = writeLines(c("Working on the file:", input$Files$name[i], sample(quotes,1))))
+
         #run FlowAI
         if(input$output_QC & input$output_hQC & input$output_lQC){
           flow_auto_qc_last(fcsfiles=fcs, given_filename=input$Files$name[i], fcs_highQ="_hQC", fcs_lowQ="_lQC", fcs_QC="_QC", folder_results="resultsQC")
@@ -119,7 +121,6 @@ server <- function(input, output) {
         }
         
         # Increment the progress bar, and update the detail text.
-        incProgress(1/(length(input$Files$name)), detail = writeLines("Working on the file:", input$Files$name[i], sample(quotes,1)))
         i=i+1
       }
     setwd(savedcurrentdirectory)
