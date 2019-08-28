@@ -1,10 +1,10 @@
-FlowAIAll
+OpenCyto
 ========
-Clean cytometry data using FlowAI R package through a new Rshiny interface.
+Automated gating data using OpenCyto R package through a new Rshiny interface.
 
 *****
 
-Launch FlowAIAll directly from R and GitHub (preferred approach)
+Launch OpenCyto directly from R and GitHub (preferred approach)
 
 User can choose to run FlowAIAll installed locally for a more preferable experience.
 
@@ -30,8 +30,8 @@ If a message like: "Update all/some/none?" appears in the Rstudio console just p
 
 Start an R session using RStudio and run this line:  
 ```
-shiny::runGitHub("FlowAIAll", "mlebeur")
-shiny::runGitHub("FlowAIAll", "CPTPGenomicTranscriptomic")
+shiny::runGitHub("OpenCyto", "mlebeur")
+shiny::runGitHub("OpenCyto", "CPTPGenomicTranscriptomic")
 
 ```
 
