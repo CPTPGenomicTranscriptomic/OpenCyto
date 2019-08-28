@@ -37,6 +37,16 @@ server <- function(input, output) {
     req(input$Files)
     print(input$Files$name)
   })
+    
+  output$inputWorkspace <- renderText({
+    req(input$workspace)
+    print(input$workspace$name)
+  })
+    
+  output$inputGatingStrategy <- renderText({
+    req(input$gatingStrategy)
+    print(input$gatingStrategy$name)
+  })
   
   #Choose output directory
   shinyDirChoose(input, 'dir', roots = c(rootWindows="C:/",currentDirectory='./',rootMAC="/", home="~/", workingDirectory=getwd()))
@@ -97,21 +107,40 @@ server <- function(input, output) {
       gs
         
       #Load the gating strategy
-      gt_tcell <- gatingTemplate(gatingstrategy)
-      plot(gt_tcell)
-        
-       #Load the workspace
-       ws <- openWorkspace()
-      #Foreach of the input FCS file
-      for (fcs in input$Files$datapath) {
-         incProgress(1/(length(input$Files$name)), detail = paste0("Working on the file: ", input$Files$name[i], "     ", sample(quotes,1)))
+      gt_tcell <- gatingTemplate(input$gatingstrategy$name)
+      #plot(gt_tcell)
 
-        #run OpenCyto
-
+      #Load the workspace
+      ws <- openWorkspace(input$workspace$name)
+      gs <- parseWorkspace(ws)
+      gh <- gs[[1]]
+      #plot(gh)
+      #plotGate(gh)
         
-        # Increment the progress bar, and update the detail text.
-        i=i+1
-      }
+      #Compensate
+      compMat <- getCompensationMatrices(gh)
+      gs <- compensate(gs, compMat)
+      #ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
+
+
+      #Transform
+      chnls <- parameters(compMat)
+      trans <- estimateLogicle(gs[[1]], channels = chnls)
+      gs <- transform(gs, trans)
+
+      #Automatic gating
+      gating(gt_tcell, gs)
+
+      #Plot
+      #plotGate(gs[[1]])
+
+      #Output
+      stats  =  getPopStats(gs)
+      write.csv(stats, file="population_statistics.csv", row.names=FALSE)
+      
+      #incProgress(1/(length(input$Files$name)), detail = paste0("Working on the file: ", input$Files$name[i], "     ", sample(quotes,1)))
+      incProgress(1/1), detail = paste0("Working on the file: ", input$Files$name[1], "     ", sample(quotes,1)))
+    })
     setwd(savedcurrentdirectory)
     print("If this message appears the program have reach the end!")
     print("You can look at \"resultsQC\" directory to see the results!")
