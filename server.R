@@ -44,8 +44,8 @@ server <- function(input, output) {
   })
     
   output$inputGatingStrategy <- renderText({
-    req(input$gatingStrategy)
-    print(input$gatingStrategy$name)
+    req(input$gatingstrategy)
+    print(input$gatinsStrategy$name)
   })
   
   #Choose output directory
