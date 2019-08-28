@@ -95,7 +95,7 @@ server <- function(input, output) {
 
       #Foreach of the input FCS file
       for (fcs in input$Files$datapath) {
-         incProgress(1/(length(input$Files$name)), detail = HTML(paste0("Working on the file: <br> ", input$Files$name[i]," <br> ", sample(quotes,1))))
+         incProgress(1/(length(input$Files$name)), detail = HTML(paste0("Working on the file: ", input$Files$name[i]," ", sample(quotes,1))))
 
         #run FlowAI
         if(input$output_QC & input$output_hQC & input$output_lQC){
