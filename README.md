@@ -30,7 +30,9 @@ If a message like: "Update all/some/none?" appears in the Rstudio console just p
 
 Start an R session using RStudio and run this line:  
 ```
+shiny::runGitHub("FlowAIAll", "mlebeur")
 shiny::runGitHub("FlowAIAll", "CPTPGenomicTranscriptomic")
+
 ```
 
 Rstudio (in the console) can ask about updates.
