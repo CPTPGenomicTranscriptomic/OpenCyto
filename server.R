@@ -99,7 +99,7 @@ server <- function(input, output) {
          incProgress(1/(length(input$Files$name)), detail = paste0("Working on the file: ", input$Files$name[i]))
          withProgress(message = "Data cleaning in progress:", value = 0, {
                  incProgress(1/(length(input$Files$name)), detail = sample(quotes,1))
-})
+
         #run FlowAI
         if(input$output_QC & input$output_hQC & input$output_lQC){
           flow_auto_qc_last(fcsfiles=fcs, given_filename=input$Files$name[i], fcs_highQ="_hQC", fcs_lowQ="_lQC", fcs_QC="_QC", folder_results="resultsQC")
@@ -130,6 +130,7 @@ server <- function(input, output) {
     print("If this message appears the program have reach the end!")
     print("You can look at \"resultsQC\" directory to see the results!")
     })
+  })
   })
 }
 
