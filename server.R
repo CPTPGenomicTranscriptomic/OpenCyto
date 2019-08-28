@@ -99,6 +99,13 @@ server <- function(input, output) {
       setwd(saveddirname)
       print(paste0("Change current to output directory:",saveddirname))
         
+      #Load the workspace
+      ws <- openWorkspace(input$workspace$datapath)
+      gs <- parseWorkspace(ws, name=1)
+      gh <- gs[[1]]
+      #plot(gh)
+      #plotGate(gh)
+      
       #Read FCS files
       #fcsFiles <- "ELS93_482 WT.fcs"
       ncfs  <- read.ncdfFlowSet(input$Files$datapath)
@@ -109,14 +116,7 @@ server <- function(input, output) {
       #Load the gating strategy
       gt_tcell <- gatingTemplate(input$gatingstrategy$datapath)
       #plot(gt_tcell)
-
-      #Load the workspace
-      ws <- openWorkspace(input$workspace$datapath)
-      gs <- parseWorkspace(ws, name=1)
-      gh <- gs[[1]]
-      #plot(gh)
-      #plotGate(gh)
-        
+      
       #Compensate
       compMat <- getCompensationMatrices(gh)
       gs <- compensate(gs, compMat)
