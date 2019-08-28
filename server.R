@@ -143,7 +143,7 @@ server <- function(input, output) {
     print("If this message appears the program have reach the end!")
     print("You can look at \"resultsQC\" directory to see the results!")
 
-    })
+#    })
   })
 }
 
