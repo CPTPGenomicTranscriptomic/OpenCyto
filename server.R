@@ -144,8 +144,8 @@ server <- function(input, output) {
     print("You can look at \"resultsQC\" directory to see the results!")
 
 #    })
-  })
-}
+  }) # end samples
+} #end server
 
 
 
