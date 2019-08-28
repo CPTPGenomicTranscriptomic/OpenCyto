@@ -70,6 +70,8 @@ server <- function(input, output) {
   output$Samples <- renderText({
     req(input$Files)
     req(input$dir)
+    withProgress(message = "Data cleaning in progress:", value = 0, {
+    incProgress(1/(length(input$Files$name)), detail = sample(quotes,1))
 
     withProgress(message = "Data cleaning in progress:", value = 0, {
       i=1
@@ -97,8 +99,6 @@ server <- function(input, output) {
       #Foreach of the input FCS file
       for (fcs in input$Files$datapath) {
          incProgress(1/(length(input$Files$name)), detail = paste0("Working on the file: ", input$Files$name[i]))
-         withProgress(message = "Data cleaning in progress:", value = 0, {
-                 incProgress(1/(length(input$Files$name)), detail = sample(quotes,1))
 
         #run FlowAI
         if(input$output_QC & input$output_hQC & input$output_lQC){
