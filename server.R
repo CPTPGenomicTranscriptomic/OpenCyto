@@ -119,7 +119,7 @@ server <- function(input, output) {
         }
         
         # Increment the progress bar, and update the detail text.
-        incProgress(1/(length(input$Files$name)), detail = writeLines("Working on the file:", input$Files$name[i], sample(quotes,1))
+        incProgress(1/(length(input$Files$name)), detail = paste0("Working on the file:", input$Files$name[i], sample(quotes,1)))
         i=i+1
       }
     setwd(savedcurrentdirectory)
