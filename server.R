@@ -70,7 +70,7 @@ server <- function(input, output) {
   output$Samples <- renderText({
     req(input$Files)
     req(input$dir)
-    withProgress(message = paste0('Data cleaning in progress:\n', sample(quotes,1),"\n"), value = 0, {
+    withProgress(message = "Data cleaning in progress:", value = 0, {
       i=1
       #Output directory
       if(input$dir$root[1] == "currentDirectory" || input$dir$root[1] == "workingDirectory"){
@@ -119,7 +119,7 @@ server <- function(input, output) {
         }
         
         # Increment the progress bar, and update the detail text.
-        incProgress(1/(length(input$Files$name)), detail = paste("Working on the file:", input$Files$name[i]))
+        incProgress(1/(length(input$Files$name)), detail = writeLines("Working on the file:", input$Files$name[i], sample(quotes,1)))
         i=i+1
       }
     setwd(savedcurrentdirectory)
