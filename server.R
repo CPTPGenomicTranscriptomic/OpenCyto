@@ -112,7 +112,7 @@ server <- function(input, output) {
 
       #Load the workspace
       ws <- openWorkspace(input$workspace$datapath)
-      gs <- parseWorkspace(ws)
+      gs <- parseWorkspace(ws, name=1)
       gh <- gs[[1]]
       #plot(gh)
       #plotGate(gh)
