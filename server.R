@@ -100,9 +100,12 @@ server <- function(input, output) {
       
       #Save current directory and change to output directory
       savedcurrentdirectory = getwd()
-      #setwd(saveddirname)
+      setwd(saveddirname)
       print(paste0("Change current to output directory:",saveddirname))
         
+      file.copy(input$Files$datapath,input$Files$name)
+      file.copy(input$workspace$datapath,input$workspace$name)
+      
       #Read FCS files
       #fcsFiles <- "ELS93_482 WT.fcs"
       print(paste0("The input FCS is:",input$Files$datapath))
@@ -110,7 +113,7 @@ server <- function(input, output) {
       fr <- ncfs[[1]]
       gs <- GatingSet(ncfs)
       gs
-      write.FCS(fr,input$Files$name)
+      #write.FCS(fr,input$Files$name)
         
       #Load the gating strategy
       gt_tcell <- gatingTemplate(input$gatingstrategy$datapath)
