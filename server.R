@@ -108,7 +108,7 @@ server <- function(input, output) {
       
       #Read FCS files
       #fcsFiles <- "ELS93_482 WT.fcs"
-      print(paste0("The input FCS is:",input$Files$datapath))
+      print(paste0("The input FCS is:",input$Files$name))
       ncfs  <- read.ncdfFlowSet(input$Files$name)
       fr <- ncfs[[1]]
       gs <- GatingSet(ncfs)
@@ -120,7 +120,7 @@ server <- function(input, output) {
       #plot(gt_tcell)
       
       #Load the workspace
-      print(paste0("The input workspace is:",input$workspace$datapath))
+      print(paste0("The input workspace is:",input$workspace$name))
       ws <- openWorkspace(input$workspace$name)
       gs <- parseWorkspace(ws, name=1)
       gh <- gs[[1]]
