@@ -100,6 +100,7 @@ server <- function(input, output) {
       print(paste0("Change current to output directory:",saveddirname))
         
       #Load the workspace
+      print(paste0("The input workspace is:",input$workspace$datapath))
       ws <- openWorkspace(input$workspace$datapath)
       gs <- parseWorkspace(ws, name=1)
       gh <- gs[[1]]
@@ -108,6 +109,7 @@ server <- function(input, output) {
       
       #Read FCS files
       #fcsFiles <- "ELS93_482 WT.fcs"
+      print(paste0("The input FCS is:",input$Files$datapath))
       ncfs  <- read.ncdfFlowSet(input$Files$datapath)
       fr <- ncfs[[1]]
       gs <- GatingSet(ncfs)
