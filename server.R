@@ -100,7 +100,7 @@ server <- function(input, output) {
       
       #Save current directory and change to output directory
       savedcurrentdirectory = getwd()
-      setwd(saveddirname)
+      #setwd(saveddirname)
       print(paste0("Change current to output directory:",saveddirname))
         
       #Read FCS files
