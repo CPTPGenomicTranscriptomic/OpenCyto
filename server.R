@@ -125,6 +125,19 @@ server <- function(input, output) {
       file.copy(input$Files$datapath,input$Files$name)
       file.copy(input$workspace$datapath,input$workspace$name)
       
+       #Load the workspace
+      print(paste0("The input workspace is:",input$workspace$name))
+      ws <- openWorkspace(input$workspace$name)
+      gs <- parseWorkspace(ws, name=1)
+      gh <- gs[[1]]
+      gh
+      #plot(gh)
+      #plotGate(gh)
+      
+      #Load the gating strategy
+      gt_tcell <- gatingTemplate(input$gatingstrategy$datapath)
+      #plot(gt_tcell)
+     
       #Read FCS files
       #fcsFiles <- "ELS93_482 WT.fcs"
       print(paste0("The input FCS is:",input$Files$name))
@@ -134,19 +147,6 @@ server <- function(input, output) {
       gs
       #write.FCS(fr,input$Files$name)
         
-      #Load the gating strategy
-      gt_tcell <- gatingTemplate(input$gatingstrategy$datapath)
-      #plot(gt_tcell)
-      
-      #Load the workspace
-      print(paste0("The input workspace is:",input$workspace$name))
-      ws <- openWorkspace(input$workspace$name)
-      gs <- parseWorkspace(ws, name=1)
-      gh <- gs[[1]]
-      gh
-      #plot(gh)
-      #plotGate(gh)
-      
       #Compensate
       compMat <- getCompensationMatrices(gh)
       compMat
