@@ -123,12 +123,12 @@ server <- function(input, output) {
       print(paste0("Change current to input directory:",saveddirname))
         
       #Load the workspace
-      incProgress(1/4, message = "Load the workspace:", detail = sample(quotes,1))
       print(paste0("The input workspace is:",input$workspace$name))
       ws <- openWorkspace(input$workspace$name)
       #gs <- parseWorkspace(ws, name = getSamples(ws)$sampleID)
       gs <- parseWorkspace(ws, name = 1)
       for(i in getSamples(ws)$sampleID){
+        incProgress((1+(i-1)*length(getSamples(ws)$sampleID))/4*length(getSamples(ws)$sampleID), message = "Load the workspace:", detail = sample(quotes,1))
         gh <- gs[[i]]
         gh
         pdf(paste0("plotGatingHierearchy_workspace_", gs[[i]]@name, ".pdf"))
@@ -139,14 +139,14 @@ server <- function(input, output) {
         dev.off()
       
         #Load the gating strategy
-        incProgress(2/4, message = "Load the gating strategy:", detail = sample(quotes,1))
+        incProgress((2+(i-1)*length(getSamples(ws)$sampleID))/4*length(getSamples(ws)$sampleID), message = "Load the gating strategy:", detail = sample(quotes,1))
         gt <- gatingTemplate(input$gatingstrategy$datapath)
         pdf("plotGatingHierearchy.pdf")
         plot(gt)
         dev.off()
      
         #Read FCS files
-        incProgress(3/4, message = "Read FCS files:", detail = sample(quotes,1))
+        incProgress((3+(i-1)*length(getSamples(ws)$sampleID))/4*length(getSamples(ws)$sampleID), message = "Read FCS files:", detail = sample(quotes,1))
         print(paste0("The input FCS is:",input$Files$name))
         ncfs  <- read.ncdfFlowSet(input$Files$name)
         gs <- GatingSet(ncfs)
@@ -165,8 +165,8 @@ server <- function(input, output) {
         gs <- transform(gs, trans)
 
         #Automatic gating
-        incProgress(4/4, message = "Read FCS files:", detail = sample(quotes,1))
-        gating(gt, gs[[i]])
+        incProgress((4+(i-1)*length(getSamples(ws)$sampleID))/4*length(getSamples(ws)$sampleID), message = "Read FCS files:", detail = sample(quotes,1))
+        gating(gt, gs)
 
         #Plot
         pdf(paste0("plotGates_", gs[[i]]@name, ".pdf"))
