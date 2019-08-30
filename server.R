@@ -131,12 +131,18 @@ server <- function(input, output) {
       gs <- parseWorkspace(ws, name=1)
       gh <- gs[[1]]
       gh
-      #plot(gh)
-      #plotGate(gh)
+      pdf("plotGatingHierearchy_workspace.pdf")
+      plot(gh)
+      dev.off()
+      pdf("plotGates_workspace.pdf")
+      plotGate(gh)
+      dev.off()
       
       #Load the gating strategy
-      gt_tcell <- gatingTemplate(input$gatingstrategy$datapath)
-      #plot(gt_tcell)
+      gt <- gatingTemplate(input$gatingstrategy$datapath)
+      pdf("plotGatingHierearchy.pdf")
+      plot(gt)
+      dev.off()
      
       #Read FCS files
       #fcsFiles <- "ELS93_482 WT.fcs"
@@ -151,8 +157,10 @@ server <- function(input, output) {
       compMat <- getCompensationMatrices(gh)
       compMat
       gs <- compensate(gs, compMat)
-      #ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
-
+      pdf("compensateg matrix.pdf")
+      ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
+      dev.off()
+      
       #Transform
       chnls <- parameters(compMat)
       trans <- estimateLogicle(gs[[1]], channels = chnls)
@@ -162,7 +170,9 @@ server <- function(input, output) {
       gating(gt_tcell, gs)
 
       #Plot
-      #plotGate(gs[[1]])
+      pdf("plotGates.pdf")
+      plotGate(gs[[1]])
+      dev.off()
 
       #Output
       stats  =  getPopStats(gs)
@@ -172,7 +182,7 @@ server <- function(input, output) {
 
     setwd(savedcurrentdirectory)
     print("If this message appears the program have reach the end!")
-    print("You can look at \"resultsQC\" directory to see the results!")
+    print("You can look at output directory to see the results!")
 
 #    })
   }) # end samples
