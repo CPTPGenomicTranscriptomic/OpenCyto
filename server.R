@@ -143,11 +143,13 @@ server <- function(input, output) {
       ws <- openWorkspace(input$workspace$name)
       gs <- parseWorkspace(ws, name=1)
       gh <- gs[[1]]
+      gh
       #plot(gh)
       #plotGate(gh)
       
       #Compensate
       compMat <- getCompensationMatrices(gh)
+      compMat
       gs <- compensate(gs, compMat)
       #ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
 
