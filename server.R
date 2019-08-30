@@ -149,12 +149,10 @@ server <- function(input, output) {
         incProgress(3/4, message = "Read FCS files:", detail = sample(quotes,1))
         print(paste0("The input FCS is:",input$Files$name))
         ncfs  <- read.ncdfFlowSet(input$Files$name)
-        #fr <- ncfs[[i]]
         gs <- GatingSet(ncfs)
         gs
         
         #Compensate
-        gh <- gs[[i]]
         compMat <- getCompensationMatrices(gh)
         gs <- compensate(gs, compMat)
         pdf(paste0("compensated_matrix_", gs[[i]]@name, ".pdf"))
