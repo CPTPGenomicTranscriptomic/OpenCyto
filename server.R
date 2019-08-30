@@ -99,7 +99,7 @@ server <- function(input, output) {
     req(input$gatingstrategy)
     req(input$Files)
     req(input$dir)
-    #withProgress(message = "Automatic gating in progress:", value = 0, {
+    withProgress(message = "Automatic gating in progress:", value = 0, {
       i=1
       #Output directory
       if(input$dir$root[1] == "currentDirectory" || input$dir$root[1] == "workingDirectory"){
@@ -180,7 +180,7 @@ server <- function(input, output) {
     print("If this message appears the program have reach the end!")
     print("You can look at output directory to see the results!")
 
-#    })
+    })
   }) # end samples
 } #end server
 
