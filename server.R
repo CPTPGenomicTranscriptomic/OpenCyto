@@ -1,4 +1,4 @@
-#Increase size of upload files to 500 Mo
+#Increase size of upload files to 2 Go
 options(shiny.maxRequestSize=2000*1024^2)
 options(warn=-1)
 
@@ -115,17 +115,14 @@ server <- function(input, output) {
         firstBox="~"
       }
       saveddirname=paste0(firstBox,paste0(input$dir$path,collapse="/"))
-      print(paste0("The output directory is:",saveddirname))
+      print(paste0("The input directory is:",saveddirname))
       
-      #Save current directory and change to output directory
+      #Save current directory and change to input directory
       savedcurrentdirectory = getwd()
       setwd(saveddirname)
-      print(paste0("Change current to output directory:",saveddirname))
+      print(paste0("Change current to input directory:",saveddirname))
         
-      file.copy(input$Files$datapath,input$Files$name)
-      file.copy(input$workspace$datapath,input$workspace$name)
-      
-       #Load the workspace
+      #Load the workspace
       print(paste0("The input workspace is:",input$workspace$name))
       ws <- openWorkspace(input$workspace$name)
       gs <- parseWorkspace(ws, name=1)
@@ -145,7 +142,6 @@ server <- function(input, output) {
       dev.off()
      
       #Read FCS files
-      #fcsFiles <- "ELS93_482 WT.fcs"
       print(paste0("The input FCS is:",input$Files$name))
       ncfs  <- read.ncdfFlowSet(input$Files$name)
       fr <- ncfs[[1]]
