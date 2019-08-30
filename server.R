@@ -122,8 +122,8 @@ server <- function(input, output) {
       setwd(saveddirname)
       print(paste0("Change current to input directory:",saveddirname))
         
-      incProgress(1/5, message = "Load the workspace:", detail = sample(quotes,1))
       #Load the workspace
+      incProgress(1/4, message = "Load the workspace:", detail = sample(quotes,1))
       print(paste0("The input workspace is:",input$workspace$name))
       ws <- openWorkspace(input$workspace$name)
       gs <- parseWorkspace(ws, name=1)
@@ -137,12 +137,14 @@ server <- function(input, output) {
       dev.off()
       
       #Load the gating strategy
+      incProgress(2/4, message = "Load the gating strategy:", detail = sample(quotes,1))
       gt <- gatingTemplate(input$gatingstrategy$datapath)
       pdf("plotGatingHierearchy.pdf")
       plot(gt)
       dev.off()
      
       #Read FCS files
+      incProgress(3/4, message = "Read FCS files:", detail = sample(quotes,1))
       print(paste0("The input FCS is:",input$Files$name))
       ncfs  <- read.ncdfFlowSet(input$Files$name)
       fr <- ncfs[[1]]
@@ -164,6 +166,7 @@ server <- function(input, output) {
       gs <- transform(gs, trans)
 
       #Automatic gating
+      incProgress(4/4, message = "Read FCS files:", detail = sample(quotes,1))
       gating(gt, gs)
 
       #Plot
