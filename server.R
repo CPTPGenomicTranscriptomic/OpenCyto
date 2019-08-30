@@ -126,7 +126,7 @@ server <- function(input, output) {
       incProgress(1/4, message = "Load the workspace:", detail = sample(quotes,1))
       print(paste0("The input workspace is:",input$workspace$name))
       ws <- openWorkspace(input$workspace$name)
-      gs <- parseWorkspace(ws, name=1)
+      gs <- parseWorkspace(ws, name = getSamples(ws)$sampleID)
       gh <- gs[[1]]
       gh
       pdf("plotGatingHierearchy_workspace.pdf")
