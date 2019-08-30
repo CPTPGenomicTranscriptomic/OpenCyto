@@ -36,8 +36,8 @@ br(),
 
   sidebarLayout(
     sidebarPanel(
-      h3("Please choose your output directory:"),
-      shinyDirButton("dir", "Choose output directory", "Select output directory"),
+      h3("Please choose your input directory:"),
+      shinyDirButton("dir", "Choose input directory", "Select input directory"),
       h3("Please upload your *.fcs files:"),
       fileInput(inputId = "Files", label = "Select Samples", multiple = TRUE, accept = ".fcs"),
       h3("Please upload your *.wsp files:"),
@@ -47,8 +47,8 @@ br(),
   ),
     
     mainPanel(
-      h4("flowAI is able to perform an automatic or interactive quality control on FCS data acquired using flow cytometry instruments. By evaluating three different properties: 1) flow rate, 2) signal acquisition, 3) dynamic range, the quality control enables the detection and removal of anomalies."),
-      HTML('<a href="https://academic.oup.com/bioinformatics/article/32/16/2473/2240408">FlowAI publication</a>'), citation("flowAI"), br(),
+      h4("The OpenCyto framework enables easy, automated, data-driven gating of high-dimensional (e.g., many samples or many dimensions) FCM data sets, eliminating the time-consuming task of manual gating."),
+      HTML('<a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003806">OpenCyto publication</a>'), citation("openCyto"), br(),
       titlePanel("The results will be print here:"),br(),
       #textOutput("inputFiles"),
       h4("Remember your input FCS files were:"),
