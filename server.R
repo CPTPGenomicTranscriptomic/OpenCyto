@@ -167,7 +167,7 @@ server <- function(input, output) {
       gs <- transform(gs, trans)
 
       #Automatic gating
-      gating(gt_tcell, gs)
+      gating(gt, gs)
 
       #Plot
       pdf("plotGates.pdf")
