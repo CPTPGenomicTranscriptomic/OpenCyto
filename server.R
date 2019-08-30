@@ -126,54 +126,55 @@ server <- function(input, output) {
       incProgress(1/4, message = "Load the workspace:", detail = sample(quotes,1))
       print(paste0("The input workspace is:",input$workspace$name))
       ws <- openWorkspace(input$workspace$name)
-      gs <- parseWorkspace(ws, name = getSamples(ws)$sampleID)
-      gh <- gs[[1]]
-      gh
-      pdf("plotGatingHierearchy_workspace.pdf")
-      plot(gh)
-      dev.off()
-      pdf("plotGates_workspace.pdf")
-      plotGate(gh)
-      dev.off()
+      #gs <- parseWorkspace(ws, name = getSamples(ws)$sampleID)
+      gs <- parseWorkspace(ws, name = 1)
+      for(i in getSamples(ws)$sampleID){
+        gh <- gs[[i]]
+        gh
+        pdf(paste0("plotGatingHierearchy_workspace_", gs[[i]]@name, ".pdf")
+        plot(gh)
+        dev.off()
+        pdf("plotGates_workspace_", gs[[i]]@name,".pdf")
+        plotGate(gh)
+        dev.off()
       
-      #Load the gating strategy
-      incProgress(2/4, message = "Load the gating strategy:", detail = sample(quotes,1))
-      gt <- gatingTemplate(input$gatingstrategy$datapath)
-      pdf("plotGatingHierearchy.pdf")
-      plot(gt)
-      dev.off()
+        #Load the gating strategy
+        incProgress(2/4, message = "Load the gating strategy:", detail = sample(quotes,1))
+        gt <- gatingTemplate(input$gatingstrategy$datapath)
+        pdf("plotGatingHierearchy.pdf")
+        plot(gt)
+        dev.off()
      
-      #Read FCS files
-      incProgress(3/4, message = "Read FCS files:", detail = sample(quotes,1))
-      print(paste0("The input FCS is:",input$Files$name))
-      ncfs  <- read.ncdfFlowSet(input$Files$name)
-      fr <- ncfs[[1]]
-      gs <- GatingSet(ncfs)
-      gs
-      #write.FCS(fr,input$Files$name)
+        #Read FCS files
+        incProgress(3/4, message = "Read FCS files:", detail = sample(quotes,1))
+        print(paste0("The input FCS is:",input$Files$name))
+        ncfs  <- read.ncdfFlowSet(input$Files$name)
+        #fr <- ncfs[[i]]
+        gs <- GatingSet(ncfs)
+        gs
         
-      #Compensate
-      compMat <- getCompensationMatrices(gh)
-      compMat
-      gs <- compensate(gs, compMat)
-      pdf("compensateg matrix.pdf")
-      ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
-      dev.off()
-      
-      #Transform
-      chnls <- parameters(compMat)
-      trans <- estimateLogicle(gs[[1]], channels = chnls)
-      gs <- transform(gs, trans)
+        #Compensate
+        gh <- gs[[i]]
+        compMat <- getCompensationMatrices(gh)
+        gs <- compensate(gs, compMat)
+        pdf("compensated_matrix_", gs[[i]]@name, ".pdf")
+        ggplot(melt(getCompensationMatrices(gs[[i]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
+        dev.off()
+            
+        #Transform
+        chnls <- parameters(compMat)
+        trans <- estimateLogicle(gs[[i]], channels = chnls)
+        gs <- transform(gs, trans)
 
-      #Automatic gating
-      incProgress(4/4, message = "Read FCS files:", detail = sample(quotes,1))
-      gating(gt, gs)
+        #Automatic gating
+        incProgress(4/4, message = "Read FCS files:", detail = sample(quotes,1))
+        gating(gt, gs)
 
-      #Plot
-      pdf("plotGates.pdf")
-      plotGate(gs[[1]])
-      dev.off()
-
+        #Plot
+        pdf("plotGates_", gs[[i]]@name, ".pdf")
+        plotGate(gs[[1]])
+        dev.off()
+      }
       #Output
       stats  =  getPopStats(gs)
       write.csv(stats, file="population_statistics.csv", row.names=FALSE)
