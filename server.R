@@ -122,6 +122,7 @@ server <- function(input, output) {
       setwd(saveddirname)
       print(paste0("Change current to input directory:",saveddirname))
         
+      incProgress(1/5), message = "Load the workspace:" detail = sample(quotes,1))
       #Load the workspace
       print(paste0("The input workspace is:",input$workspace$name))
       ws <- openWorkspace(input$workspace$name)
