@@ -131,7 +131,7 @@ server <- function(input, output) {
       for(i in getSamples(ws)$sampleID){
         gh <- gs[[i]]
         gh
-        pdf(paste0("plotGatingHierearchy_workspace_", gs[[i]]@name, ".pdf")
+        pdf(paste0("plotGatingHierearchy_workspace_", gs[[i]]@name, ".pdf"))
         plot(gh)
         dev.off()
         pdf("plotGates_workspace_", gs[[i]]@name,".pdf")
@@ -157,7 +157,7 @@ server <- function(input, output) {
         gh <- gs[[i]]
         compMat <- getCompensationMatrices(gh)
         gs <- compensate(gs, compMat)
-        pdf("compensated_matrix_", gs[[i]]@name, ".pdf")
+        pdf(paste0("compensated_matrix_", gs[[i]]@name, ".pdf"))
         ggplot(melt(getCompensationMatrices(gs[[i]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
         dev.off()
             
@@ -171,7 +171,7 @@ server <- function(input, output) {
         gating(gt, gs)
 
         #Plot
-        pdf("plotGates_", gs[[i]]@name, ".pdf")
+        pdf(paste0("plotGates_", gs[[i]]@name, ".pdf"))
         plotGate(gs[[1]])
         dev.off()
       }
