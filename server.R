@@ -166,11 +166,11 @@ server <- function(input, output) {
 
         #Automatic gating
         incProgress(4/4, message = "Read FCS files:", detail = sample(quotes,1))
-        gating(gt, gs)
+        gating(gt, gs[[i]])
 
         #Plot
         pdf(paste0("plotGates_", gs[[i]]@name, ".pdf"))
-        plotGate(gs[[1]])
+        plotGate(gs[[i]])
         dev.off()
       }
       #Output
