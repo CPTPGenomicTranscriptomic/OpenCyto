@@ -1,0 +1,5 @@
+"name","Population","Parent","Count","ParentCount"
+"ELS93_482 WT.fcs","/cells","root",150444,160240
+"ELS93_482 WT.fcs","/cells/Single Cells FSC","/cells",137555,150444
+"ELS93_482 WT.fcs","/cells/Single Cells FSC/Single Cells SSC","/cells/Single Cells FSC",128881,137555
+"ELS93_482 WT.fcs","/cells/Single Cells FSC/Single Cells SSC/CD4+","/cells/Single Cells FSC/Single Cells SSC",120686,128881

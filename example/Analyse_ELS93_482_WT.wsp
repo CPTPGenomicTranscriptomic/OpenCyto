@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <Workspace version="20.0"  modDate="Wed Jan 09 11:29:07 CET 2019"  clientTimestamp="1547029747658"  flowJoVersion="10.5.3"  drawRowBorders="1"  drawColumnBorders="1"  hideCompNodes="1"  curGroup="All Samples"  groupPaneHeight="-1"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:gating="http://www.isac-net.org/std/Gating-ML/v2.0/gating"  xmlns:transforms="http://www.isac-net.org/std/Gating-ML/v2.0/transformations"  xmlns:data-type="http://www.isac-net.org/std/Gating-ML/v2.0/datatypes"  xsi:schemaLocation="http://www.isac-net.org/std/Gating-ML/v2.0/gating http://www.isac-net.org/std/Gating-ML/v2.0/gating/Gating-ML.v2.0.xsd http://www.isac-net.org/std/Gating-ML/v2.0/transformations http://www.isac-net.org/std/Gating-ML/v2.0/gating/Transformations.v2.0.xsd http://www.isac-net.org/std/Gating-ML/v2.0/datatypes http://www.isac-net.org/std/Gating-ML/v2.0/gating/DataTypes.v2.0.xsd "  nonAutoSaveFileName="file:/C:/Users/Amnis/Desktop/ALI/R%20cécile/Pour%20Anne-Laure/Données%20standardisée/Analyse_ELS93_482_WT.wsp" >
+   <WindowPosition x="20"  y="20"  width="600"  height="720"  displayed="1"  panelState="" />
+   <TextTraits font="SansSerif"  size="11"  name=""  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+   <Columns>
+     <TColumn width="300" >
+       <Property key="fj.appnode.prop.name" />
+     </TColumn>
+     <TColumn width="140" >
+       <Property key="fj.appnode.prop.statistic" />
+     </TColumn>
+     <TColumn width="140" >
+       <Property key="fj.appnode.prop.ncells" />
+     </TColumn>
+   </Columns>
+   <Matrices>
+     <transforms:spilloverMatrix prefix="Comp-"  name="Acquisition-defined"  editable="0"  color="#c0c0c0"  version="FlowJo-10.5.3"  status="FINALIZED"  transforms:id="07d43dca-64e8-4d2a-a275-32b49f299192"  suffix="" >
+       <data-type:parameters>
+         <data-type:parameter data-type:name="GFP-A" />
+         <data-type:parameter data-type:name="BV421-A" />
+         <data-type:parameter data-type:name="BV510-A" />
+         <data-type:parameter data-type:name="BV650-A" />
+         <data-type:parameter data-type:name="BV711-A" />
+         <data-type:parameter data-type:name="BV785-A" />
+         <data-type:parameter data-type:name="APC-A" />
+         <data-type:parameter data-type:name="APC-H7-A" />
+         <data-type:parameter data-type:name="PE (Yellow Green)-A" />
+         <data-type:parameter data-type:name="PerCP-eFluor710-A" />
+         <data-type:parameter data-type:name="PE-Cy7-A" />
+       </data-type:parameters>
+       <transforms:spillover data-type:parameter="GFP-A" >
+         <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="1" />
+         <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0.0003871088" />
+         <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0.040453162" />
+         <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0010236623" />
+         <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0" />
+       </transforms:spillover>
+       <transforms:spillover data-type:parameter="BV421-A" >
+         <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0.0001635263" />
+         <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="1" />
+         <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0.0758603141" />
+         <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.0023584436" />
+         <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.0003015355" />
+         <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.0000514699" />
+         <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0" />
+       </transforms:spillover>
+       <transforms:spillover data-type:parameter="BV510-A" >
+         <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0.0051630265" />
+         <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0.247144267" />
+         <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="1" />
+         <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.3459582031" />
+         <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.0802984536" />
+         <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.0211005993" />
+         <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.0001562185" />
+         <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0.000099765" />
+         <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0000772798" />
+         <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0" />
+       </transforms:spillover>
+       <transforms:spillover data-type:parameter="BV650-A" >
+         <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0.02664176" />
+         <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0.0023606436" />
+         <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="1" />
+         <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.2231962383" />
+         <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.0436106771" />
+         <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.034200009" />
+         <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.0179999899" />
+         <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0.0002003319" />
+         <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0026636242" />
+         <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.0045851418" />
+       </transforms:spillover>
+       <transforms:spillover data-type:parameter="BV711-A" >
+         <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0.0599419028" />
+         <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0.0046715867" />
+         <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.021358164" />
+         <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="1" />
+         <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.3657635152" />
+         <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.0306301843" />
+         <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.2616090775" />
+         <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0708097965" />
+         <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.0119841509" />
+       </transforms:spillover>
+       <transforms:spillover data-type:parameter="BV785-A" >
+         <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0.0001471107" />
+         <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0.071469903" />
+         <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0.0069237524" />
+         <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.0079840505" />
+         <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.0287795104" />
+         <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="1" />
+         <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.0029252684" />
+         <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.1933190376" />
+         <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0002311778" />
+         <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.0130078858" />
+       </transforms:spillover>
+       <transforms:spillover data-type:parameter="APC-A" >
+         <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0.0001989737" />
+         <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.1023156345" />
+         <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.0210036095" />
+         <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.004800952" />
+         <transforms:coefficient data-type:parameter="APC-A"  transforms:value="1" />
+         <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.1806387156" />
+         <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0.0018974935" />
+         <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0031096749" />
+         <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.0128000388" />
+       </transforms:spillover>
+       <transforms:spillover data-type:parameter="APC-H7-A" >
+         <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.0004603649" />
+         <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.0002338106" />
+         <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.0403364412" />
+         <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.0065607275" />
+         <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="1" />
+         <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.0805651322" />
+       </transforms:spillover>
+       <transforms:spillover data-type:parameter="PE (Yellow Green)-A" >
+         <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0.006047911" />
+         <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0.0016006157" />
+         <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.0273997635" />
+         <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.0011861714" />
+         <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.000132853" />
+         <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.0001992793" />
+         <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="1" />
+         <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.043553628" />
+         <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.0122473827" />
+       </transforms:spillover>
+       <transforms:spillover data-type:parameter="PerCP-eFluor710-A" >
+         <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.0277076382" />
+         <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.8000003099" />
+         <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.2500000894" />
+         <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.1101308018" />
+         <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.3799999952" />
+         <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="1" />
+         <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.1885865331" />
+       </transforms:spillover>
+       <transforms:spillover data-type:parameter="PE-Cy7-A" >
+         <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0.0010425071" />
+         <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0" />
+         <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.0006829699" />
+         <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.0066291234" />
+         <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.0880758017" />
+         <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.0014615511" />
+         <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.1469274163" />
+         <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0.0188673194" />
+         <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0084412908" />
+         <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="1" />
+       </transforms:spillover>
+     </transforms:spilloverMatrix>
+   </Matrices>
+   <Cytometers>
+     <Cytometer name="DIVA"  cyt="LSRFortessa"  useFCS3="1"  extraNegs="0"  widthBasis="-100"  linMin="0"  logMin="3"  linMax="262144"  logMax="262144"  linearRescale="1"  logRescale="1"  linFromKW="1"  logFromKW="1"  useGain="0"  useTransform="1"  transformType="BIEX"  manufacturer=""  serialnumber=""  homepage="workspaces-and-samples/flowjo-and-your-cytometer/ws-cytometer-bd/"  icon="bd.PNG" >
+       <LinParams>
+         <Param>time</Param>
+       </LinParams>
+       <LogParams/>
+       <FilterParams/>
+       <TransformStore>
+         <MatrixID matrixId="07d43dca-64e8-4d2a-a275-32b49f299192" >
+           <Transforms>
+             <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+               <data-type:parameter data-type:name="PE (Yellow Green)-A" />
+             </transforms:biex>
+             <transforms:linear transforms:minRange="0"  transforms:maxRange="262144"  gain="1" >
+               <data-type:parameter data-type:name="FSC-W" />
+             </transforms:linear>
+             <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+               <data-type:parameter data-type:name="BV421-A" />
+             </transforms:biex>
+             <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+               <data-type:parameter data-type:name="PE-Cy7-A" />
+             </transforms:biex>
+             <transforms:linear transforms:minRange="0"  transforms:maxRange="262144"  gain="1" >
+               <data-type:parameter data-type:name="SSC-H" />
+             </transforms:linear>
+             <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+               <data-type:parameter data-type:name="BV510-A" />
+             </transforms:biex>
+             <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+               <data-type:parameter data-type:name="BV785-A" />
+             </transforms:biex>
+             <transforms:linear transforms:minRange="0"  transforms:maxRange="262144"  gain="1" >
+               <data-type:parameter data-type:name="FSC-A" />
+             </transforms:linear>
+             <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+               <data-type:parameter data-type:name="GFP-A" />
+             </transforms:biex>
+             <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+               <data-type:parameter data-type:name="BV711-A" />
+             </transforms:biex>
+             <transforms:linear transforms:minRange="0"  transforms:maxRange="262144"  gain="1" >
+               <data-type:parameter data-type:name="SSC-A" />
+             </transforms:linear>
+             <transforms:linear transforms:minRange="0"  transforms:maxRange="262144"  gain="1" >
+               <data-type:parameter data-type:name="FSC-H" />
+             </transforms:linear>
+             <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+               <data-type:parameter data-type:name="APC-A" />
+             </transforms:biex>
+             <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+               <data-type:parameter data-type:name="APC-H7-A" />
+             </transforms:biex>
+             <transforms:linear transforms:minRange="0"  transforms:maxRange="262144"  gain="1" >
+               <data-type:parameter data-type:name="SSC-W" />
+             </transforms:linear>
+             <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+               <data-type:parameter data-type:name="PerCP-eFluor710-A" />
+             </transforms:biex>
+             <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+               <data-type:parameter data-type:name="BV650-A" />
+             </transforms:biex>
+           </Transforms>
+         </MatrixID>
+       </TransformStore>
+     </Cytometer>
+   </Cytometers>
+   <Groups>
+     <GroupNode name="All Samples"  annotation=""  owningGroup="All Samples"  expanded="1"  sortPriority="10"  count="-1" >
+       <Graph smoothing="0"  backColor="#ffffff"  foreColor="#000000"  type="Pseudocolor"  fast="1" >
+         <Axis dimension="x"  name=""  label=""  auto="auto" />
+         <Axis dimension="y"  name=""  label=""  auto="auto" />
+         <GraphSettings level="5%"  smoothingHighResolution="1"  contourHighResolution="1"  histogramSmoothingCount="0"  graphResolution="256"  showOutliers="0"  drawLargeDots="0"  dotsToDraw="8000"  tint="le.chartfill.tinted.40"  lineWeight="le.lineweight.normal"  lineStyle="le.linestyle.solid" />
+         <GraphEnvironment showGrid="0"  showAxes="tnlTNL"  showGates="1"  showFreqOnPlots="1"  showGateNameOnPlots="1"  showMedians="0"  showUncomped="0"  addEventParam="0"  lastYAxisName="" >
+           <TextTraits font="SansSerif"  size="11"  name="Labels"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+           <TextTraits font="SansSerif"  size="11"  name="LayoutGates"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+           <TextTraits font="SansSerif"  size="9"  name="Numbers"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+           <TextTraits font="SansSerif"  size="9"  name="Legend"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+         </GraphEnvironment>
+       </Graph>
+       <Group name="All Samples"  live="1"  role="ws.group.dlog.test"  key=""  synchronized="0"  foreground="#000000"  fontStyle="bold" >
+         <Criteria/>
+         <SampleRefs>
+           <SampleRef sampleID="1" />
+         </SampleRefs>
+         <Keywords/>
+       </Group>
+     </GroupNode>
+     <GroupNode name="Compensation"  annotation=""  owningGroup="Compensation"  expanded="1"  sortPriority="10"  count="-1" >
+       <Graph smoothing="0"  backColor="#ffffff"  foreColor="#000000"  type="Pseudocolor"  fast="1" >
+         <Axis dimension="x"  name=""  label=""  auto="auto" />
+         <Axis dimension="y"  name=""  label=""  auto="auto" />
+         <GraphSettings level="5%"  smoothingHighResolution="1"  contourHighResolution="1"  histogramSmoothingCount="0"  graphResolution="256"  showOutliers="0"  drawLargeDots="0"  dotsToDraw="8000"  tint="le.chartfill.tinted.40"  lineWeight="le.lineweight.normal"  lineStyle="le.linestyle.solid" />
+         <GraphEnvironment showGrid="0"  showAxes="tnlTNL"  showGates="1"  showFreqOnPlots="1"  showGateNameOnPlots="1"  showMedians="0"  showUncomped="0"  addEventParam="0"  lastYAxisName="" >
+           <TextTraits font="SansSerif"  size="11"  name="Labels"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+           <TextTraits font="SansSerif"  size="11"  name="LayoutGates"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+           <TextTraits font="SansSerif"  size="9"  name="Numbers"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+           <TextTraits font="SansSerif"  size="9"  name="Legend"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+         </GraphEnvironment>
+       </Graph>
+       <Group name="Compensation"  live="1"  role="ws.group.dlog.compensation"  key=""  synchronized="0"  foreground="#bc1900"  fontStyle="bold" >
+         <Criteria>
+           <Criterion connector="And"  keyword="$FIL"  function="Contains"  value="comp" />
+           <Criterion connector="Or"  keyword="$FIL"  function="Contains"  value="unstained" />
+         </Criteria>
+         <Keywords/>
+       </Group>
+     </GroupNode>
+   </Groups>
+   <SampleList>
+     <Sample>
+       <DataSet uri="file:/C:/Users/Amnis/Desktop/ALI/R%20cécile/Pour%20Anne-Laure/Données%20standardisée/ELS93_482%20WT.fcs"  sampleID="1" />
+       <transforms:spilloverMatrix prefix="Comp-"  name="Acquisition-defined"  editable="0"  color="#c0c0c0"  version="FlowJo-10.5.3"  status="FINALIZED"  transforms:id="07d43dca-64e8-4d2a-a275-32b49f299192"  suffix="" >
+         <data-type:parameters>
+           <data-type:parameter data-type:name="GFP-A" />
+           <data-type:parameter data-type:name="BV421-A" />
+           <data-type:parameter data-type:name="BV510-A" />
+           <data-type:parameter data-type:name="BV650-A" />
+           <data-type:parameter data-type:name="BV711-A" />
+           <data-type:parameter data-type:name="BV785-A" />
+           <data-type:parameter data-type:name="APC-A" />
+           <data-type:parameter data-type:name="APC-H7-A" />
+           <data-type:parameter data-type:name="PE (Yellow Green)-A" />
+           <data-type:parameter data-type:name="PerCP-eFluor710-A" />
+           <data-type:parameter data-type:name="PE-Cy7-A" />
+         </data-type:parameters>
+         <transforms:spillover data-type:parameter="GFP-A" >
+           <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="1" />
+           <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0.0003871088" />
+           <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0.040453162" />
+           <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0010236623" />
+           <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0" />
+         </transforms:spillover>
+         <transforms:spillover data-type:parameter="BV421-A" >
+           <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0.0001635263" />
+           <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="1" />
+           <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0.0758603141" />
+           <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.0023584436" />
+           <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.0003015355" />
+           <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.0000514699" />
+           <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0" />
+         </transforms:spillover>
+         <transforms:spillover data-type:parameter="BV510-A" >
+           <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0.0051630265" />
+           <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0.247144267" />
+           <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="1" />
+           <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.3459582031" />
+           <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.0802984536" />
+           <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.0211005993" />
+           <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.0001562185" />
+           <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0.000099765" />
+           <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0000772798" />
+           <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0" />
+         </transforms:spillover>
+         <transforms:spillover data-type:parameter="BV650-A" >
+           <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0.02664176" />
+           <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0.0023606436" />
+           <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="1" />
+           <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.2231962383" />
+           <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.0436106771" />
+           <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.034200009" />
+           <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.0179999899" />
+           <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0.0002003319" />
+           <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0026636242" />
+           <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.0045851418" />
+         </transforms:spillover>
+         <transforms:spillover data-type:parameter="BV711-A" >
+           <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0.0599419028" />
+           <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0.0046715867" />
+           <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.021358164" />
+           <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="1" />
+           <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.3657635152" />
+           <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.0306301843" />
+           <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.2616090775" />
+           <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0708097965" />
+           <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.0119841509" />
+         </transforms:spillover>
+         <transforms:spillover data-type:parameter="BV785-A" >
+           <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0.0001471107" />
+           <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0.071469903" />
+           <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0.0069237524" />
+           <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.0079840505" />
+           <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.0287795104" />
+           <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="1" />
+           <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.0029252684" />
+           <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.1933190376" />
+           <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0002311778" />
+           <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.0130078858" />
+         </transforms:spillover>
+         <transforms:spillover data-type:parameter="APC-A" >
+           <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0.0001989737" />
+           <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.1023156345" />
+           <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.0210036095" />
+           <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.004800952" />
+           <transforms:coefficient data-type:parameter="APC-A"  transforms:value="1" />
+           <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.1806387156" />
+           <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0.0018974935" />
+           <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0031096749" />
+           <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.0128000388" />
+         </transforms:spillover>
+         <transforms:spillover data-type:parameter="APC-H7-A" >
+           <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.0004603649" />
+           <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.0002338106" />
+           <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.0403364412" />
+           <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.0065607275" />
+           <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="1" />
+           <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.0805651322" />
+         </transforms:spillover>
+         <transforms:spillover data-type:parameter="PE (Yellow Green)-A" >
+           <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0.006047911" />
+           <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0.0016006157" />
+           <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.0273997635" />
+           <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.0011861714" />
+           <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.000132853" />
+           <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.0001992793" />
+           <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="1" />
+           <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.043553628" />
+           <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.0122473827" />
+         </transforms:spillover>
+         <transforms:spillover data-type:parameter="PerCP-eFluor710-A" >
+           <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.0277076382" />
+           <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.8000003099" />
+           <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.2500000894" />
+           <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.1101308018" />
+           <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.3799999952" />
+           <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="1" />
+           <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="0.1885865331" />
+         </transforms:spillover>
+         <transforms:spillover data-type:parameter="PE-Cy7-A" >
+           <transforms:coefficient data-type:parameter="GFP-A"  transforms:value="0.0010425071" />
+           <transforms:coefficient data-type:parameter="BV421-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV510-A"  transforms:value="0" />
+           <transforms:coefficient data-type:parameter="BV650-A"  transforms:value="0.0006829699" />
+           <transforms:coefficient data-type:parameter="BV711-A"  transforms:value="0.0066291234" />
+           <transforms:coefficient data-type:parameter="BV785-A"  transforms:value="0.0880758017" />
+           <transforms:coefficient data-type:parameter="APC-A"  transforms:value="0.0014615511" />
+           <transforms:coefficient data-type:parameter="APC-H7-A"  transforms:value="0.1469274163" />
+           <transforms:coefficient data-type:parameter="PE (Yellow Green)-A"  transforms:value="0.0188673194" />
+           <transforms:coefficient data-type:parameter="PerCP-eFluor710-A"  transforms:value="0.0084412908" />
+           <transforms:coefficient data-type:parameter="PE-Cy7-A"  transforms:value="1" />
+         </transforms:spillover>
+       </transforms:spilloverMatrix>
+       <Transformations>
+         <transforms:linear transforms:minRange="0"  transforms:maxRange="262144"  gain="1" >
+           <data-type:parameter data-type:name="FSC-A" />
+         </transforms:linear>
+         <transforms:linear transforms:minRange="0"  transforms:maxRange="262144"  gain="1" >
+           <data-type:parameter data-type:name="FSC-H" />
+         </transforms:linear>
+         <transforms:linear transforms:minRange="0"  transforms:maxRange="262144"  gain="1" >
+           <data-type:parameter data-type:name="FSC-W" />
+         </transforms:linear>
+         <transforms:linear transforms:minRange="0"  transforms:maxRange="262144"  gain="1" >
+           <data-type:parameter data-type:name="SSC-A" />
+         </transforms:linear>
+         <transforms:linear transforms:minRange="0"  transforms:maxRange="262144"  gain="1" >
+           <data-type:parameter data-type:name="SSC-H" />
+         </transforms:linear>
+         <transforms:linear transforms:minRange="0"  transforms:maxRange="262144"  gain="1" >
+           <data-type:parameter data-type:name="SSC-W" />
+         </transforms:linear>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="GFP-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="BV421-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="BV510-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="BV650-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="BV711-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="BV785-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="APC-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="APC-H7-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="PE (Yellow Green)-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="PerCP-eFluor710-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="PE-Cy7-A" />
+         </transforms:biex>
+         <transforms:linear transforms:minRange="0.5736319459"  transforms:maxRange="45"  gain="0.0105641242" >
+           <data-type:parameter data-type:name="Time" />
+         </transforms:linear>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="Comp-GFP-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="Comp-BV421-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="Comp-BV510-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="Comp-BV650-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="Comp-BV711-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="Comp-BV785-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="Comp-APC-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="Comp-APC-H7-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="Comp-PE (Yellow Green)-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="Comp-PerCP-eFluor710-A" />
+         </transforms:biex>
+         <transforms:biex transforms:length="256"  transforms:maxRange="262144"  transforms:neg="0"  transforms:width="-100"  transforms:pos="4.418539922" >
+           <data-type:parameter data-type:name="Comp-PE-Cy7-A" />
+         </transforms:biex>
+       </Transformations>
+       <Keywords>
+         <Keyword name="CST REGULATORY STATUS"  value="RUO Performance Check" />
+         <Keyword name="CST PERFORMANCE EXPIRED"  value="2018-01-23T09:18:48+01:00" />
+         <Keyword name="CST BEADS EXPIRED"  value="False" />
+         <Keyword name="CST BASELINE DATE"  value="2017-09-08T17:27:26+02:00" />
+         <Keyword name="CST SETUP DATE"  value="2018-01-22T09:18:48+01:00" />
+         <Keyword name="CYTOMETER CONFIG CREATE DATE"  value="2017-09-14T09:28:46+02:00" />
+         <Keyword name="CYTOMETER CONFIG NAME"  value="Config Purpan Installation" />
+         <Keyword name="CST BEADS LOT ID"  value="70405" />
+         <Keyword name="CST SETUP STATUS"  value="SUCCESS WITH WARNING" />
+         <Keyword name="P18MS"  value="0" />
+         <Keyword name="P18BS"  value="0" />
+         <Keyword name="$P18G"  value="0.01" />
+         <Keyword name="$P18E"  value="0,0" />
+         <Keyword name="$P18B"  value="32" />
+         <Keyword name="$P18R"  value="262144" />
+         <Keyword name="$P18N"  value="Time" />
+         <Keyword name="P17MS"  value="0" />
+         <Keyword name="P17BS"  value="734" />
+         <Keyword name="P17DISPLAY"  value="LOG" />
+         <Keyword name="$P17G"  value="1.0" />
+         <Keyword name="$P17V"  value="608" />
+         <Keyword name="$P17E"  value="0,0" />
+         <Keyword name="$P17B"  value="32" />
+         <Keyword name="$P17R"  value="262144" />
+         <Keyword name="$P17N"  value="PE-Cy7-A" />
+         <Keyword name="P16MS"  value="0" />
+         <Keyword name="P16BS"  value="874" />
+         <Keyword name="P16DISPLAY"  value="LOG" />
+         <Keyword name="$P16G"  value="1.0" />
+         <Keyword name="$P16V"  value="566" />
+         <Keyword name="$P16E"  value="0,0" />
+         <Keyword name="$P16B"  value="32" />
+         <Keyword name="$P16R"  value="262144" />
+         <Keyword name="$P16N"  value="PerCP-eFluor710-A" />
+         <Keyword name="P15MS"  value="0" />
+         <Keyword name="P15BS"  value="1157" />
+         <Keyword name="P15DISPLAY"  value="LOG" />
+         <Keyword name="$P15G"  value="1.0" />
+         <Keyword name="$P15V"  value="507" />
+         <Keyword name="$P15E"  value="0,0" />
+         <Keyword name="$P15B"  value="32" />
+         <Keyword name="$P15R"  value="262144" />
+         <Keyword name="$P15N"  value="PE (Yellow Green)-A" />
+         <Keyword name="P14MS"  value="0" />
+         <Keyword name="P14BS"  value="4135" />
+         <Keyword name="P14DISPLAY"  value="LOG" />
+         <Keyword name="$P14G"  value="1.0" />
+         <Keyword name="$P14V"  value="763" />
+         <Keyword name="$P14E"  value="0,0" />
+         <Keyword name="$P14B"  value="32" />
+         <Keyword name="$P14R"  value="262144" />
+         <Keyword name="$P14N"  value="APC-H7-A" />
+         <Keyword name="P13MS"  value="0" />
+         <Keyword name="P13BS"  value="3049" />
+         <Keyword name="P13DISPLAY"  value="LOG" />
+         <Keyword name="$P13G"  value="1.0" />
+         <Keyword name="$P13V"  value="651" />
+         <Keyword name="$P13E"  value="0,0" />
+         <Keyword name="$P13B"  value="32" />
+         <Keyword name="$P13R"  value="262144" />
+         <Keyword name="$P13N"  value="APC-A" />
+         <Keyword name="P12MS"  value="0" />
+         <Keyword name="P12BS"  value="894" />
+         <Keyword name="P12DISPLAY"  value="LOG" />
+         <Keyword name="$P12G"  value="1.0" />
+         <Keyword name="$P12V"  value="659" />
+         <Keyword name="$P12E"  value="0,0" />
+         <Keyword name="$P12B"  value="32" />
+         <Keyword name="$P12R"  value="262144" />
+         <Keyword name="$P12N"  value="BV785-A" />
+         <Keyword name="P11MS"  value="0" />
+         <Keyword name="P11BS"  value="22321" />
+         <Keyword name="P11DISPLAY"  value="LOG" />
+         <Keyword name="$P11G"  value="1.0" />
+         <Keyword name="$P11V"  value="554" />
+         <Keyword name="$P11E"  value="0,0" />
+         <Keyword name="$P11B"  value="32" />
+         <Keyword name="$P11R"  value="262144" />
+         <Keyword name="$P11N"  value="BV711-A" />
+         <Keyword name="P10MS"  value="0" />
+         <Keyword name="P10BS"  value="1357" />
+         <Keyword name="P10DISPLAY"  value="LOG" />
+         <Keyword name="$P10G"  value="1.0" />
+         <Keyword name="$P10V"  value="749" />
+         <Keyword name="$P10E"  value="0,0" />
+         <Keyword name="$P10B"  value="32" />
+         <Keyword name="$P10R"  value="262144" />
+         <Keyword name="$P10N"  value="BV650-A" />
+         <Keyword name="P9MS"  value="0" />
+         <Keyword name="P9BS"  value="186" />
+         <Keyword name="P9DISPLAY"  value="LOG" />
+         <Keyword name="$P9G"  value="1.0" />
+         <Keyword name="$P9V"  value="478" />
+         <Keyword name="$P9E"  value="0,0" />
+         <Keyword name="$P9B"  value="32" />
+         <Keyword name="$P9R"  value="262144" />
+         <Keyword name="$P9N"  value="BV510-A" />
+         <Keyword name="P8MS"  value="0" />
+         <Keyword name="P8BS"  value="1570" />
+         <Keyword name="P8DISPLAY"  value="LOG" />
+         <Keyword name="$P8G"  value="1.0" />
+         <Keyword name="$P8V"  value="448" />
+         <Keyword name="$P8E"  value="0,0" />
+         <Keyword name="$P8B"  value="32" />
+         <Keyword name="$P8R"  value="262144" />
+         <Keyword name="$P8N"  value="BV421-A" />
+         <Keyword name="P7MS"  value="0" />
+         <Keyword name="P7BS"  value="397" />
+         <Keyword name="P7DISPLAY"  value="LOG" />
+         <Keyword name="$P7G"  value="1.0" />
+         <Keyword name="$P7V"  value="538" />
+         <Keyword name="$P7E"  value="0,0" />
+         <Keyword name="$P7B"  value="32" />
+         <Keyword name="$P7R"  value="262144" />
+         <Keyword name="$P7N"  value="GFP-A" />
+         <Keyword name="P6MS"  value="0" />
+         <Keyword name="P6BS"  value="-1" />
+         <Keyword name="$P6G"  value="1.0" />
+         <Keyword name="$P6V"  value="270" />
+         <Keyword name="$P6E"  value="0,0" />
+         <Keyword name="$P6B"  value="32" />
+         <Keyword name="$P6R"  value="262144" />
+         <Keyword name="$P6N"  value="SSC-W" />
+         <Keyword name="P5MS"  value="0" />
+         <Keyword name="P5BS"  value="0" />
+         <Keyword name="P5DISPLAY"  value="LIN" />
+         <Keyword name="$P5G"  value="1.0" />
+         <Keyword name="$P5V"  value="270" />
+         <Keyword name="$P5E"  value="0,0" />
+         <Keyword name="$P5B"  value="32" />
+         <Keyword name="$P5R"  value="262144" />
+         <Keyword name="$P5N"  value="SSC-H" />
+         <Keyword name="P4MS"  value="0" />
+         <Keyword name="P4BS"  value="0" />
+         <Keyword name="P4DISPLAY"  value="LIN" />
+         <Keyword name="$P4G"  value="1.0" />
+         <Keyword name="$P4V"  value="270" />
+         <Keyword name="$P4E"  value="0,0" />
+         <Keyword name="$P4B"  value="32" />
+         <Keyword name="$P4R"  value="262144" />
+         <Keyword name="$P4N"  value="SSC-A" />
+         <Keyword name="P3MS"  value="0" />
+         <Keyword name="P3BS"  value="-1" />
+         <Keyword name="$P3G"  value="1.0" />
+         <Keyword name="$P3V"  value="431" />
+         <Keyword name="$P3E"  value="0,0" />
+         <Keyword name="$P3B"  value="32" />
+         <Keyword name="$P3R"  value="262144" />
+         <Keyword name="$P3N"  value="FSC-W" />
+         <Keyword name="P2MS"  value="0" />
+         <Keyword name="P2BS"  value="0" />
+         <Keyword name="P2DISPLAY"  value="LIN" />
+         <Keyword name="$P2G"  value="1.0" />
+         <Keyword name="$P2V"  value="431" />
+         <Keyword name="$P2E"  value="0,0" />
+         <Keyword name="$P2B"  value="32" />
+         <Keyword name="$P2R"  value="262144" />
+         <Keyword name="$P2N"  value="FSC-H" />
+         <Keyword name="P1MS"  value="0" />
+         <Keyword name="P1BS"  value="0" />
+         <Keyword name="P1DISPLAY"  value="LIN" />
+         <Keyword name="$P1G"  value="1.0" />
+         <Keyword name="$P1V"  value="431" />
+         <Keyword name="$P1E"  value="0,0" />
+         <Keyword name="$P1B"  value="32" />
+         <Keyword name="$P1R"  value="262144" />
+         <Keyword name="$P1N"  value="FSC-A" />
+         <Keyword name="THRESHOLD"  value="FSC,5000" />
+         <Keyword name="APPLY COMPENSATION"  value="TRUE" />
+         <Keyword name="SPILL"  value="11,GFP-A,BV421-A,BV510-A,BV650-A,BV711-A,BV785-A,APC-A,APC-H7-A,PE (Yellow Green)-A,PerCP-eFluor710-A,PE-Cy7-A,1,0.00038710879369555085,0.04045316213254905,0,0,0,0,0,0,0.001023662304059352,0,0.0001635262832596827,1,0.07586031347499084,0.002358443642445788,0,0.0003015354993961528,0,0.000051469948330348804,0,0,0,0.005163026463639026,0.2471442639506972,1,0.3459582028703956,0.08029845664155864,0.02110060017534317,0,0.00015621850148390623,0.0000997650276162921,0.00007727976247434449,0,0,0.02664175991622763,0.002360643491834605,1,0.22319623524862536,0.04361067824663021,0.034200007872851435,0.017999990503778346,0.0002003318889313542,0.0026636242002434562,0.004585141771893258,0,0.059941903533367015,0.0046715866314054446,0.021358163638001932,1,0.36576352471228035,0.03063018449639702,0.2616090709093646,0,0.07080979729106036,0.01198415084103898,0.00014711069982776133,0.07146990332217344,0.006923752307539069,0.00798405026662635,0.02877950960194095,1,0.002925268460045984,0.19331903515159354,0,0.0002311778316264455,0.013007886087884809,0.00019897367038241198,0,0,0.10231563732571385,0.021003609288790515,0.004800952207252309,1,0.18063871816614532,0.001897493506477099,0.0031096748031400907,0.012800038921544054,0,0,0,0.000460364891340705,0.00023381057465840667,0.04033644275784437,0.006560727506920963,1,0,0,0.08056513542870028,0.006047910899544956,0,0.0016006156747355542,0.027399763483590578,0,0.0011861714087296538,0.00013285299033367347,0.000199279317993578,1,0.04355362870409089,0.012247382333735268,0,0,0,0.02770763838416065,0.8000003244009988,0.25000008626647646,0.11013080288044838,0.38000000080270946,0,1,0.18858653672492212,0.001042507077518325,0,0,0.0006829699539107482,0.00662912319456487,0.08807580147522401,0.0014615510891220543,0.14692742304158168,0.018867319681138264,0.008441290356011814,1" />
+         <Keyword name="$TIMESTEP"  value="0.01" />
+         <Keyword name="LASER4ASF"  value="0.84" />
+         <Keyword name="LASER4DELAY"  value="127.03" />
+         <Keyword name="LASER4NAME"  value="Yellow Green" />
+         <Keyword name="LASER3ASF"  value="0.84" />
+         <Keyword name="LASER3DELAY"  value="94.16" />
+         <Keyword name="LASER3NAME"  value="Red" />
+         <Keyword name="LASER2ASF"  value="0.90" />
+         <Keyword name="LASER2DELAY"  value="31.23" />
+         <Keyword name="LASER2NAME"  value="Violet" />
+         <Keyword name="LASER1ASF"  value="0.84" />
+         <Keyword name="LASER1DELAY"  value="0.00" />
+         <Keyword name="LASER1NAME"  value="Blue" />
+         <Keyword name="$INST"  value=" " />
+         <Keyword name="AUTOBS"  value="TRUE" />
+         <Keyword name="FSC ASF"  value="0.71" />
+         <Keyword name="$OP"  value="CPTP" />
+         <Keyword name="EXPORT TIME"  value="20-FEB-2018-20:24:01" />
+         <Keyword name="EXPORT USER NAME"  value="CPTP" />
+         <Keyword name="WINDOW EXTENSION"  value="10.00" />
+         <Keyword name="CYTNUM"  value="1" />
+         <Keyword name="SETTINGS"  value="Cecile S1P1 sdt" />
+         <Keyword name="$CYT"  value="LSRFortessa" />
+         <Keyword name="$ETIM"  value="19:28:52" />
+         <Keyword name="$BTIM"  value="19:28:07" />
+         <Keyword name="$DATE"  value="20-FEB-2018" />
+         <Keyword name="GUID"  value="cc06793c-0320-40cb-9cb4-c44bac08aa9e" />
+         <Keyword name="EXPERIMENT NAME"  value="CA 20180220 12couleurs S1P1" />
+         <Keyword name="$SRC"  value="ELS93" />
+         <Keyword name="TUBE NAME"  value="482 WT" />
+         <Keyword name="CREATOR"  value="BD FACSDiva Software Version 8.0.2" />
+         <Keyword name="$NEXTDATA"  value="0" />
+         <Keyword name="$DATATYPE"  value="F" />
+         <Keyword name="$BYTEORD"  value="4,3,2,1" />
+         <Keyword name="$MODE"  value="L" />
+         <Keyword name="$PAR"  value="18" />
+         <Keyword name="$TOT"  value="160240             " />
+         <Keyword name="$SYS"  value="Windows 7 6.1" />
+         <Keyword name="$FIL"  value="ELS93_482 WT.fcs" />
+         <Keyword name="$ENDDATA"  value="11542238           " />
+         <Keyword name="$BEGINDATA"  value="4959" />
+         <Keyword name="$ENDSTEXT"  value="0" />
+         <Keyword name="$BEGINSTEXT"  value="0" />
+         <Keyword name="$ENDANALYSIS"  value="0" />
+         <Keyword name="$BEGINANALYSIS"  value="0" />
+         <Keyword name="FJ_FCS_VERSION"  value="3" />
+         <Keyword name="$P1S"  value="" />
+         <Keyword name="$P2S"  value="" />
+         <Keyword name="$P3S"  value="" />
+         <Keyword name="$P4S"  value="" />
+         <Keyword name="$P5S"  value="" />
+         <Keyword name="$P6S"  value="" />
+         <Keyword name="$P7S"  value="" />
+         <Keyword name="$P8S"  value="" />
+         <Keyword name="$P9S"  value="" />
+         <Keyword name="$P10S"  value="" />
+         <Keyword name="$P11S"  value="" />
+         <Keyword name="$P12S"  value="" />
+         <Keyword name="$P13S"  value="" />
+         <Keyword name="$P14S"  value="" />
+         <Keyword name="$P15S"  value="" />
+         <Keyword name="$P16S"  value="" />
+         <Keyword name="$P17S"  value="" />
+         <Keyword name="$P18S"  value="" />
+         <Keyword name="$P19N"  value="Comp-GFP-A" />
+         <Keyword name="$P19S"  value="" />
+         <Keyword name="$P19R"  value="262144" />
+         <Keyword name="$P20N"  value="Comp-BV421-A" />
+         <Keyword name="$P20S"  value="" />
+         <Keyword name="$P20R"  value="262144" />
+         <Keyword name="$P21N"  value="Comp-BV510-A" />
+         <Keyword name="$P21S"  value="" />
+         <Keyword name="$P21R"  value="262144" />
+         <Keyword name="$P22N"  value="Comp-BV650-A" />
+         <Keyword name="$P22S"  value="" />
+         <Keyword name="$P22R"  value="262144" />
+         <Keyword name="$P23N"  value="Comp-BV711-A" />
+         <Keyword name="$P23S"  value="" />
+         <Keyword name="$P23R"  value="262144" />
+         <Keyword name="$P24N"  value="Comp-BV785-A" />
+         <Keyword name="$P24S"  value="" />
+         <Keyword name="$P24R"  value="262144" />
+         <Keyword name="$P25N"  value="Comp-APC-A" />
+         <Keyword name="$P25S"  value="" />
+         <Keyword name="$P25R"  value="262144" />
+         <Keyword name="$P26N"  value="Comp-APC-H7-A" />
+         <Keyword name="$P26S"  value="" />
+         <Keyword name="$P26R"  value="262144" />
+         <Keyword name="$P27N"  value="Comp-PE (Yellow Green)-A" />
+         <Keyword name="$P27S"  value="" />
+         <Keyword name="$P27R"  value="262144" />
+         <Keyword name="$P28N"  value="Comp-PerCP-eFluor710-A" />
+         <Keyword name="$P28S"  value="" />
+         <Keyword name="$P28R"  value="262144" />
+         <Keyword name="$P29N"  value="Comp-PE-Cy7-A" />
+         <Keyword name="$P29S"  value="" />
+         <Keyword name="$P29R"  value="262144" />
+       </Keywords>
+       <SampleNode name="ELS93_482 WT.fcs"  annotation=""  owningGroup=""  expanded="1"  sortPriority="10"  count="160240"  sampleID="1" >
+         <Graph smoothing="0"  backColor="#ffffff"  foreColor="#000000"  heatMapStatParameter="Comp-GFP-A"  type="Pseudocolor"  fast="1" >
+           <Axis dimension="x"  name="FSC-A"  label=""  auto="auto" />
+           <Axis dimension="y"  name="SSC-A"  label=""  auto="auto" />
+           <GraphSettings level="5%"  smoothingHighResolution="1"  contourHighResolution="1"  histogramSmoothingCount="0"  graphResolution="256"  showOutliers="0"  drawLargeDots="0"  dotsToDraw="8000"  tint="le.chartfill.tinted.40"  lineWeight="le.lineweight.normal"  lineStyle="le.linestyle.solid" />
+           <GraphEnvironment showGrid="0"  showAxes="tnlTNL"  showGates="1"  showFreqOnPlots="1"  showGateNameOnPlots="1"  showMedians="0"  showUncomped="0"  addEventParam="0"  lastYAxisName="" >
+             <TextTraits font="SansSerif"  size="11"  name="Labels"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+             <TextTraits font="SansSerif"  size="11"  name="LayoutGates"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+             <TextTraits font="SansSerif"  size="9"  name="Numbers"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+             <TextTraits font="SansSerif"  size="9"  name="Legend"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+             <WindowPosition x="620"  y="20"  width="390"  height="582"  displayed="1"  panelState="---" />
+           </GraphEnvironment>
+         </Graph>
+         <Subpopulations>
+           <Population name="cells"  annotation=""  owningGroup=""  expanded="1"  sortPriority="10"  count="142518" >
+             <Graph smoothing="0"  backColor="#ffffff"  foreColor="#000000"  heatMapStatParameter="Comp-GFP-A"  type="Pseudocolor"  fast="1" >
+               <Axis dimension="x"  name="FSC-H"  label=""  auto="auto" />
+               <Axis dimension="y"  name="FSC-W"  label=""  auto="auto" />
+               <GraphSettings level="5%"  smoothingHighResolution="1"  contourHighResolution="1"  histogramSmoothingCount="0"  graphResolution="256"  showOutliers="0"  drawLargeDots="0"  dotsToDraw="8000"  tint="le.chartfill.tinted.40"  lineWeight="le.lineweight.normal"  lineStyle="le.linestyle.solid" />
+               <GraphEnvironment showGrid="0"  showAxes="tnlTNL"  showGates="1"  showFreqOnPlots="1"  showGateNameOnPlots="1"  showMedians="0"  showUncomped="0"  addEventParam="0"  lastYAxisName="" >
+                 <TextTraits font="SansSerif"  size="11"  name="Labels"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                 <TextTraits font="SansSerif"  size="11"  name="LayoutGates"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                 <TextTraits font="SansSerif"  size="9"  name="Numbers"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                 <TextTraits font="SansSerif"  size="9"  name="Legend"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                 <WindowPosition x="620"  y="20"  width="390"  height="582"  displayed="1"  panelState="---" />
+               </GraphEnvironment>
+               <WindowPosition x="620"  y="20"  width="390"  height="582" />
+             </Graph>
+             <Gate gating:id="ID71706042" >
+               <gating:PolygonGate eventsInside="1"  annoOffsetX="0"  annoOffsetY="0"  tint="#000000"  isTinted="0"  lineWeight="Normal"  userDefined="1"  quadId="-1"  gateResolution="256"  gating:id="ID71706042" >
+                 <gating:dimension>
+                   <data-type:fcs-dimension data-type:name="FSC-A" />
+                 </gating:dimension>
+                 <gating:dimension>
+                   <data-type:fcs-dimension data-type:name="SSC-A" />
+                 </gating:dimension>
+                 <gating:vertex>
+                   <gating:coordinate data-type:value="146492.2352941177" />
+                   <gating:coordinate data-type:value="102683.133640553" />
+                 </gating:vertex>
+                 <gating:vertex>
+                   <gating:coordinate data-type:value="34144.8067226891" />
+                   <gating:coordinate data-type:value="43489.3271889401" />
+                 </gating:vertex>
+                 <gating:vertex>
+                   <gating:coordinate data-type:value="34144.8067226891" />
+                   <gating:coordinate data-type:value="10872.331797235" />
+                 </gating:vertex>
+                 <gating:vertex>
+                   <gating:coordinate data-type:value="59478.0504201681" />
+                   <gating:coordinate data-type:value="3624.1105990783" />
+                 </gating:vertex>
+                 <gating:vertex>
+                   <gating:coordinate data-type:value="148695.1260504202" />
+                   <gating:coordinate data-type:value="22952.7004608295" />
+                 </gating:vertex>
+                 <gating:vertex>
+                   <gating:coordinate data-type:value="170724.0336134454" />
+                   <gating:coordinate data-type:value="67650.064516129" />
+                 </gating:vertex>
+               </gating:PolygonGate>
+             </Gate>
+             <Subpopulations>
+               <Population name="Single Cells FSC"  annotation=""  owningGroup=""  expanded="1"  sortPriority="10"  count="140176" >
+                 <Graph smoothing="0"  backColor="#ffffff"  foreColor="#000000"  heatMapStatParameter="Comp-GFP-A"  type="Pseudocolor"  fast="1" >
+                   <Axis dimension="x"  name="SSC-H"  label=""  auto="auto" />
+                   <Axis dimension="y"  name="SSC-W"  label=""  auto="auto" />
+                   <GraphSettings level="5%"  smoothingHighResolution="1"  contourHighResolution="1"  histogramSmoothingCount="0"  graphResolution="256"  showOutliers="0"  drawLargeDots="0"  dotsToDraw="8000"  tint="le.chartfill.tinted.40"  lineWeight="le.lineweight.normal"  lineStyle="le.linestyle.solid" />
+                   <GraphEnvironment showGrid="0"  showAxes="tnlTNL"  showGates="1"  showFreqOnPlots="1"  showGateNameOnPlots="1"  showMedians="0"  showUncomped="0"  addEventParam="0"  lastYAxisName="" >
+                     <TextTraits font="SansSerif"  size="11"  name="Labels"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                     <TextTraits font="SansSerif"  size="11"  name="LayoutGates"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                     <TextTraits font="SansSerif"  size="9"  name="Numbers"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                     <TextTraits font="SansSerif"  size="9"  name="Legend"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                     <WindowPosition x="620"  y="20"  width="390"  height="582"  displayed="1"  panelState="---" />
+                   </GraphEnvironment>
+                   <WindowPosition x="620"  y="20"  width="390"  height="582" />
+                 </Graph>
+                 <Gate gating:id="ID1404457122"  gating:parent_id="ID71706042" >
+                   <gating:RectangleGate eventsInside="1"  annoOffsetX="0"  annoOffsetY="0"  tint="#000000"  isTinted="0"  lineWeight="Normal"  userDefined="1"  percentX="0"  percentY="0"  gating:id="ID1404457122"  gating:parent_id="ID71706042" >
+                     <gating:dimension gating:min="14318.789915966387"  gating:max="164115.3613445378" >
+                       <data-type:fcs-dimension data-type:name="FSC-H" />
+                     </gating:dimension>
+                     <gating:dimension gating:min="62817.91705069124"  gating:max="84562.58064516129" >
+                       <data-type:fcs-dimension data-type:name="FSC-W" />
+                     </gating:dimension>
+                   </gating:RectangleGate>
+                 </Gate>
+                 <Subpopulations>
+                   <Population name="Single Cells SSC"  annotation=""  owningGroup=""  expanded="1"  sortPriority="10"  count="138398" >
+                     <Graph smoothing="1"  backColor="#ffffff"  foreColor="#000000"  heatMapStatParameter="Comp-GFP-A"  type="Histogram"  fast="1" >
+                       <Axis dimension="x"  name="Comp-APC-H7-A"  label=""  auto="auto" />
+                       <Axis dimension="y"  name=""  label=""  auto="auto" />
+                       <GraphSettings level="5%"  smoothingHighResolution="1"  contourHighResolution="1"  histogramSmoothingCount="0"  graphResolution="256"  showOutliers="0"  drawLargeDots="0"  dotsToDraw="8000"  tint="le.chartfill.tinted.40"  lineWeight="le.lineweight.normal"  lineStyle="le.linestyle.solid" />
+                       <GraphEnvironment showGrid="0"  showAxes="tnlTNL"  showGates="1"  showFreqOnPlots="1"  showGateNameOnPlots="1"  showMedians="0"  showUncomped="0"  addEventParam="0"  lastYAxisName="FSC-H" >
+                         <TextTraits font="SansSerif"  size="11"  name="Labels"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                         <TextTraits font="SansSerif"  size="11"  name="LayoutGates"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                         <TextTraits font="SansSerif"  size="9"  name="Numbers"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                         <TextTraits font="SansSerif"  size="9"  name="Legend"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                         <WindowPosition x="620"  y="20"  width="390"  height="582"  displayed="1"  panelState="---" />
+                       </GraphEnvironment>
+                       <WindowPosition x="620"  y="20"  width="390"  height="582" />
+                     </Graph>
+                     <Gate gating:id="ID781363706"  gating:parent_id="ID1404457122" >
+                       <gating:RectangleGate eventsInside="1"  annoOffsetX="-11"  annoOffsetY="-31"  tint="#000000"  isTinted="0"  lineWeight="Normal"  userDefined="1"  percentX="0"  percentY="0"  gating:id="ID781363706"  gating:parent_id="ID1404457122" >
+                         <gating:dimension gating:min="5507.226890756303"  gating:max="93622.85714285714" >
+                           <data-type:fcs-dimension data-type:name="SSC-H" />
+                         </gating:dimension>
+                         <gating:dimension gating:min="57985.76958525346"  gating:max="78522.39631336405" >
+                           <data-type:fcs-dimension data-type:name="SSC-W" />
+                         </gating:dimension>
+                       </gating:RectangleGate>
+                     </Gate>
+                     <Subpopulations>
+                       <Population name="CD4+"  annotation=""  owningGroup=""  expanded="1"  sortPriority="10"  count="128097" >
+                         <Graph smoothing="1"  backColor="#ffffff"  foreColor="#000000"  heatMapStatParameter="Comp-GFP-A"  type="Histogram"  fast="1" >
+                           <Axis dimension="x"  name="Comp-APC-H7-A"  label=""  auto="auto" />
+                           <Axis dimension="y"  name=""  label=""  auto="auto" />
+                           <GraphSettings level="5%"  smoothingHighResolution="1"  contourHighResolution="1"  histogramSmoothingCount="0"  graphResolution="256"  showOutliers="0"  drawLargeDots="0"  dotsToDraw="8000"  tint="le.chartfill.tinted.40"  lineWeight="le.lineweight.normal"  lineStyle="le.linestyle.solid" />
+                           <GraphEnvironment showGrid="0"  showAxes="tnlTNL"  showGates="1"  showFreqOnPlots="1"  showGateNameOnPlots="1"  showMedians="0"  showUncomped="0"  addEventParam="0"  lastYAxisName="" >
+                             <TextTraits font="SansSerif"  size="11"  name="Labels"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                             <TextTraits font="SansSerif"  size="11"  name="LayoutGates"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                             <TextTraits font="SansSerif"  size="9"  name="Numbers"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                             <TextTraits font="SansSerif"  size="9"  name="Legend"  style="plain"  color="#000000"  background="#00ffffff"  just="left" />
+                             <WindowPosition x="620"  y="20"  width="390"  height="582"  displayed="1"  panelState="---" />
+                           </GraphEnvironment>
+                         </Graph>
+                         <Gate gating:id="ID747775729"  gating:parent_id="ID781363706" >
+                           <gating:RectangleGate eventsInside="1"  annoOffsetX="34"  annoOffsetY="-112"  tint="#000000"  isTinted="0"  lineWeight="Normal"  userDefined="1"  gating:id="ID747775729"  gating:parent_id="ID781363706" >
+                             <gating:dimension gating:min="3188.7467841180223"  gating:max="33410.12887178"  yRatio="0.847926267281106" >
+                               <data-type:fcs-dimension data-type:name="Comp-APC-H7-A" />
+                             </gating:dimension>
+                           </gating:RectangleGate>
+                         </Gate>
+                       </Population>
+                     </Subpopulations>
+                   </Population>
+                 </Subpopulations>
+               </Population>
+             </Subpopulations>
+           </Population>
+         </Subpopulations>
+       </SampleNode>
+     </Sample>
+   </SampleList>
+   <TableEditor title="FlowJo Tables: Analyse_ELS93_482_WT.wsp"  current="Table" >
+     <Table name="Table"  outputFile="file:/C:/Users/Amnis/Documents/Table"  color="#00ffffff"  isBatch="0"  quickclose="0"  destination="toDisplay"  outputFormat="fj.document.type.table" >
+       <PrintLayout flipPattern0="0"  rows="1"  columns="1"  padding="36"  header=""  footer=""  headerActive="0"  footerActive="0"  scalingMode="fj.print.scale.none"  scaling="1"  orientation="1"  width="595.2744"  height="841.8888"  imageableX="72"  imageableY="72"  imageableWidth="451.2744"  imageableHeight="697.8888" />
+       <PageSection sectionName="header" >&lt;table width=&quot;100%&quot;&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;&amp;NBSP&amp;NBSP&amp;NBSP&amp;NBSP&lt;IMG SRC=&quot;file:/C:/Program%20Files/FlowJo%20V10/images/fj_icon.png&quot;&gt;&lt;/IMG&gt;&lt;br/&gt;FlowJo, LLC&lt;/td&gt;&lt;td align=&quot;right&quot; valign=&quot;top&quot;&gt;Page &lt;PageNumber/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</PageSection>
+       <PageSection sectionName="footer" >&lt;table width=&quot;100%&quot;&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;  valign=&quot;bottom&quot;&gt;&lt;LongDate/&gt;&lt;/td&gt;&lt;td align=&quot;right&quot; valign=&quot;bottom&quot;&gt;&lt;Version/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</PageSection>
+       <Iteration iterationType="SAMPLE"  iterationValue=""  iterationKeyword=""  discriminator=""  panelSize="1"  groupName="workspaceSelection" />
+     </Table>
+   </TableEditor>
+   <LayoutEditor title="FlowJo Layouts: Analyse_ELS93_482_WT.wsp"  current="Layout"  showGrid="0"  showPageBreaks="0"  showGuides="0"  showDebugOutput="0" >
+     <Layout name="Layout"  outputFile="file:/C:/Users/Amnis/Documents/Layout"  color="#00ffffff"  isBatch="0"  showGrid="0"  showRulers="1"  showDebugOutput="0"  showGuides="0"  showPageBreaks="1"  scale="1" >
+       <PrintLayout flipPattern0="0"  rows="1"  columns="1"  padding="36"  header=""  footer=""  headerActive="0"  footerActive="0"  scalingMode="fj.print.scale.none"  scaling="1"  orientation="1"  width="595.2744"  height="841.8888"  imageableX="72"  imageableY="72"  imageableWidth="451.2744"  imageableHeight="697.8888" />
+       <PageSection sectionName="header" >&lt;table width=&quot;100%&quot;&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;&amp;NBSP&amp;NBSP&amp;NBSP&amp;NBSP&lt;IMG SRC=&quot;file:/C:/Program%20Files/FlowJo%20V10/images/fj_icon.png&quot;&gt;&lt;/IMG&gt;&lt;br/&gt;FlowJo, LLC&lt;/td&gt;&lt;td align=&quot;right&quot; valign=&quot;top&quot;&gt;Page &lt;PageNumber/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</PageSection>
+       <PageSection sectionName="footer" >&lt;table width=&quot;100%&quot;&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;  valign=&quot;bottom&quot;&gt;&lt;LongDate/&gt;&lt;/td&gt;&lt;td align=&quot;right&quot; valign=&quot;bottom&quot;&gt;&lt;Version/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</PageSection>
+       <Iteration iterationType="OFF"  iterationValue=""  iterationKeyword=""  discriminator=""  panelSize="1"  groupName="workspaceSelection" />
+       <BatchSettings useCurrentGroup="1"  length="3"  name=""  order="ACROSS"  direction="COLUMNS"  append="0"  destination="toLayout"  separatePages="0"  launchApp="1"  header="0"  footer="0"  commandLineBatch="0" />
+       <FigList/>
+     </Layout>
+     <WindowPosition x="0"  y="0"  width="900"  height="600" />
+   </LayoutEditor>
+   <Scripts>
+     <Script lang="text/javascript"  name="New Script 		 " />
+   </Scripts>
+   <Exports/>
+   <SOPS/>
+   <experiment/>
+ </Workspace>

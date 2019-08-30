@@ -1,0 +1,5 @@
+alias	pop	parent	dims	gating_method	gating_args	collapseDataForGating	groupBy	preprocessing_method	preprocessing_args
+cells	+	root	FSC-A,SSC-A	singletGate					
+Single Cells FSC	+	cells	FSC-H,FSC-W	singletGate					
+Single Cells SSC	+	Single Cells FSC	SSC-H,SSC-W	singletGate					
+CD4+	+	Single Cells SSC	APC-H7-A,SSC-A	singletGate					
