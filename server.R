@@ -129,7 +129,7 @@ server <- function(input, output) {
       gs <- parseWorkspace(ws, name = 1)
       nbsamples = length(getSamples(ws)$sampleID)
       for(i in getSamples(ws)$sampleID){
-        incProgress((1 + (i - 1) * nbsamples) / 4 * nbsamples), message = "Load the workspace:", detail = sample(quotes,1))
+        incProgress(((1 + (i - 1) * nbsamples) / 4 * nbsamples), message = "Load the workspace:", detail = sample(quotes,1))
         gh <- gs[[i]]
         gh
         #Plot the gates in the workspace
@@ -144,14 +144,14 @@ server <- function(input, output) {
           dev.off()
         
           #Load the gating strategy
-          incProgress((2 + (i - 1) * nbsamples) / 4 * nbsamples), message = "Load the gating strategy:", detail = sample(quotes,1))
+          incProgress(((2 + (i - 1) * nbsamples) / 4 * nbsamples), message = "Load the gating strategy:", detail = sample(quotes,1))
           gt <- gatingTemplate(input$gatingstrategy$datapath)
           pdf("plotGatingHierearchy.pdf")
           plot(gt)
           dev.off()
      
           #Read FCS files
-          incProgress(( 3 + (i - 1) *  nbsamples) / 4 *  nbsamples), message = "Read FCS files:", detail = sample(quotes,1))
+          incProgress((( 3 + (i - 1) *  nbsamples) / 4 *  nbsamples), message = "Read FCS files:", detail = sample(quotes,1))
           print(paste0("The input FCS is:",input$Files$name))
           ncfs  <- read.ncdfFlowSet(input$Files$name)
           gs <- GatingSet(ncfs)
@@ -170,7 +170,7 @@ server <- function(input, output) {
           gs <- transform(gs, trans)
 
           #Automatic gating
-          incProgress(( 4 + (i - 1) * nbsamples) / 4 *  nbsamples), message = "Read FCS files:", detail = sample(quotes,1))
+          incProgress((( 4 + (i - 1) * nbsamples) / 4 *  nbsamples), message = "Read FCS files:", detail = sample(quotes,1))
           gating(gt, gs)
         }
         #Plot
