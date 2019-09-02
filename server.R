@@ -163,9 +163,10 @@ server <- function(input, output) {
       #Compensate
       compMat <- getCompensationMatrices(gh)
       gs <- compensate(gs, compMat)
+      write.csv2(getCompensationMatrices(gs[[1]])@spillover, "test.csv")
       getCompensationMatrices(gs[[1]])@spillover
-      pdf("compensated_matrix.pdf")
       ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
+      pdf("compensated_matrix.pdf")
       ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
       dev.off()
             
