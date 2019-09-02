@@ -139,14 +139,14 @@ server <- function(input, output) {
       
          #plot the gating strategy in the workspace
          if(i == getSamples(ws)$sampleID[1]){
-          pdf(paste0("plotGatingHierearchy_workspace_", gs[[i]]@name, ".pdf"))
+          pdf(paste0("plotGatingHierearchy_workspace", ".pdf"))
           plot(gh)
           dev.off()
         
-          #Load the gating strategy
+          #Load the automatic gating strategy
           incProgress(((2 + (i - 1) * nbsamples) / 4 * nbsamples), message = "Load the gating strategy:", detail = sample(quotes,1))
           gt <- gatingTemplate(input$gatingstrategy$datapath)
-          pdf("plotGatingHierearchy.pdf")
+          pdf("plotGatingHierearchy_automatic.pdf")
           plot(gt)
           dev.off()
      
@@ -160,13 +160,13 @@ server <- function(input, output) {
           #Compensate
           compMat <- getCompensationMatrices(gh)
           gs <- compensate(gs, compMat)
-          pdf(paste0("compensated_matrix_", gs[[i]]@name, ".pdf"))
-          ggplot(melt(getCompensationMatrices(gs[[i]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
+          pdf(paste0("compensated_matrix.pdf"))
+          ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
           dev.off()
             
           #Transform
           chnls <- parameters(compMat)
-          trans <- estimateLogicle(gs[[i]], channels = chnls)
+          trans <- estimateLogicle(gs[[1]], channels = chnls)
           gs <- transform(gs, trans)
 
           #Automatic gating
