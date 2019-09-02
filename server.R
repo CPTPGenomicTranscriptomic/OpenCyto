@@ -128,51 +128,56 @@ server <- function(input, output) {
       #gs <- parseWorkspace(ws, name = getSamples(ws)$sampleID)
       gs <- parseWorkspace(ws, name = 1)
       nbsamples = length(getSamples(ws)$sampleID)
+      incProgress(1/4, message = "Load the workspace:", detail = sample(quotes,1))
+      #incProgress(((1 + (i - 1) * nbsamples) / 4 * nbsamples), message = "Load the workspace:", detail = sample(quotes,1))
       for(i in getSamples(ws)$sampleID){
-        incProgress(((1 + (i - 1) * nbsamples) / 4 * nbsamples), message = "Load the workspace:", detail = sample(quotes,1))
         gh <- gs[[i]]
         gh
         #Plot the gates in the workspace
-        pdf("plotGates_workspace_", gs[[i]]@name,".pdf")
+        pdf(paste0("plotGates_workspace_", gs[[i]]@name,".pdf"))
         plotGate(gh)
         dev.off()
+      }
       
-         #plot the gating strategy in the workspace
-         if(i == getSamples(ws)$sampleID[1]){
-          pdf(paste0("plotGatingHierearchy_workspace", ".pdf"))
-          plot(gh)
-          dev.off()
+      #plot the gating strategy in the workspace
+      pdf(paste0("plotGatingHierearchy_workspace", ".pdf"))
+      plot(gh)
+      dev.off()
         
-          #Load the automatic gating strategy
-          incProgress(((2 + (i - 1) * nbsamples) / 4 * nbsamples), message = "Load the gating strategy:", detail = sample(quotes,1))
-          gt <- gatingTemplate(input$gatingstrategy$datapath)
-          pdf("plotGatingHierearchy_automatic.pdf")
-          plot(gt)
-          dev.off()
+      #Load the automatic gating strategy
+      incProgress(2/4, message = "Load the gating strategy:", detail = sample(quotes,1))
+      #incProgress(((2 + (i - 1) * nbsamples) / 4 * nbsamples), message = "Load the gating strategy:", detail = sample(quotes,1))
+      gt <- gatingTemplate(input$gatingstrategy$datapath)
+      pdf("plotGatingHierearchy_automatic.pdf")
+      plot(gt)
+      dev.off()
      
-          #Read FCS files
-          incProgress((( 3 + (i - 1) *  nbsamples) / 4 *  nbsamples), message = "Read FCS files:", detail = sample(quotes,1))
-          print(paste0("The input FCS is:",input$Files$name))
-          ncfs  <- read.ncdfFlowSet(input$Files$name)
-          gs <- GatingSet(ncfs)
-          gs
+      #Read FCS files
+      incProgress(3/4, message = "Read FCS files:", detail = sample(quotes,1))
+      #incProgress((( 3 + (i - 1) *  nbsamples) / 4 *  nbsamples), message = "Read FCS files:", detail = sample(quotes,1))
+      print(paste0("The input FCS is:",input$Files$name))
+      ncfs  <- read.ncdfFlowSet(input$Files$name)
+      gs <- GatingSet(ncfs)
+      gs
         
-          #Compensate
-          compMat <- getCompensationMatrices(gh)
-          gs <- compensate(gs, compMat)
-          pdf(paste0("compensated_matrix.pdf"))
-          ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
-          dev.off()
+      #Compensate
+      compMat <- getCompensationMatrices(gh)
+      gs <- compensate(gs, compMat)
+      pdf(paste0("compensated_matrix.pdf"))
+      ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
+      dev.off()
             
-          #Transform
-          chnls <- parameters(compMat)
-          trans <- estimateLogicle(gs[[1]], channels = chnls)
-          gs <- transform(gs, trans)
+      #Transform
+      chnls <- parameters(compMat)
+      trans <- estimateLogicle(gs[[1]], channels = chnls)
+      gs <- transform(gs, trans)
 
-          #Automatic gating
-          incProgress((( 4 + (i - 1) * nbsamples) / 4 *  nbsamples), message = "Read FCS files:", detail = sample(quotes,1))
-          gating(gt, gs)
-        }
+      #Automatic gating
+      incProgress(4/4, message = "Automatic gating:", detail = sample(quotes,1))
+      #incProgress((( 4 + (i - 1) * nbsamples) / 4 *  nbsamples), message = "Automatic gating:", detail = sample(quotes,1))
+      gating(gt, gs)
+        
+      for(i in getSamples(ws)$sampleID){
         #Plot
         pdf(paste0("plotGates_", gs[[i]]@name, ".pdf"))
         plotGate(gs[[i]])
