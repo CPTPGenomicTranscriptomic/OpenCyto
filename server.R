@@ -99,7 +99,7 @@ server <- function(input, output) {
     req(input$gatingstrategy)
     req(input$Files)
     req(input$dir)
-    withProgress(message = "Automatic gating in progress:", value = 0, {
+    withProgress(message = "Preparing the data:", value = 0, {
       i=1
       #Output directory
       if(input$dir$root[1] == "currentDirectory" || input$dir$root[1] == "workingDirectory"){
@@ -124,11 +124,11 @@ server <- function(input, output) {
         
       #Load the workspace
       print(paste0("The input workspace is:",input$workspace$name))
+      incProgress(0/4, message = "Load the workspace:", detail = sample(quotes,1))
       ws <- openWorkspace(input$workspace$name)
       #gs <- parseWorkspace(ws, name = getSamples(ws)$sampleID)
       gs <- parseWorkspace(ws, name = 1)
       nbsamples = length(getSamples(ws)$sampleID)
-      incProgress(1/4, message = "Load the workspace:", detail = sample(quotes,1))
       #incProgress(((1 + (i - 1) * nbsamples) / 4 * nbsamples), message = "Load the workspace:", detail = sample(quotes,1))
       for(i in getSamples(ws)$sampleID){
         gh <- gs[[i]]
@@ -145,7 +145,7 @@ server <- function(input, output) {
       dev.off()
         
       #Load the automatic gating strategy
-      incProgress(2/4, message = "Load the gating strategy:", detail = sample(quotes,1))
+      incProgress(1/4, message = "Load the gating strategy:", detail = sample(quotes,1))
       #incProgress(((2 + (i - 1) * nbsamples) / 4 * nbsamples), message = "Load the gating strategy:", detail = sample(quotes,1))
       gt <- gatingTemplate(input$gatingstrategy$datapath)
       pdf("plotGatingHierearchy_automatic.pdf")
@@ -153,7 +153,7 @@ server <- function(input, output) {
       dev.off()
      
       #Read FCS files
-      incProgress(3/4, message = "Read FCS files:", detail = sample(quotes,1))
+      incProgress(2/4, message = "Read FCS files:", detail = sample(quotes,1))
       #incProgress((( 3 + (i - 1) *  nbsamples) / 4 *  nbsamples), message = "Read FCS files:", detail = sample(quotes,1))
       print(paste0("The input FCS is:",input$Files$name))
       ncfs  <- read.ncdfFlowSet(input$Files$name)
@@ -163,7 +163,8 @@ server <- function(input, output) {
       #Compensate
       compMat <- getCompensationMatrices(gh)
       gs <- compensate(gs, compMat)
-      pdf(paste0("compensated_matrix.pdf"))
+      pdf("compensated_matrix.pdf")
+      ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
       ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
       dev.off()
             
@@ -173,13 +174,13 @@ server <- function(input, output) {
       gs <- transform(gs, trans)
 
       #Automatic gating
-      incProgress(4/4, message = "Automatic gating:", detail = sample(quotes,1))
+      incProgress(3/4, message = "Automatic gating:", detail = sample(quotes,1))
       #incProgress((( 4 + (i - 1) * nbsamples) / 4 *  nbsamples), message = "Automatic gating:", detail = sample(quotes,1))
       gating(gt, gs)
         
       for(i in getSamples(ws)$sampleID){
         #Plot
-        pdf(paste0("plotGates_", gs[[i]]@name, ".pdf"))
+        pdf(paste0("plotGates_automatic_", gs[[i]]@name, ".pdf"))
         plotGate(gs[[i]])
         dev.off()
       }
