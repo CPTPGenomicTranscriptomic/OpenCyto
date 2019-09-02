@@ -163,6 +163,7 @@ server <- function(input, output) {
       #Compensate
       compMat <- getCompensationMatrices(gh)
       gs <- compensate(gs, compMat)
+      getCompensationMatrices(gs[[1]])@spillover
       pdf("compensated_matrix.pdf")
       ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
       ggplot(melt(getCompensationMatrices(gs[[1]])@spillover,value.name = "Coefficient"))+geom_tile(aes(x=Var1,y=Var2,fill=Coefficient))+scale_fill_continuous(guide="colourbar")+theme(axis.text.x=element_text(angle=45,hjust=1))
@@ -186,6 +187,7 @@ server <- function(input, output) {
       }
       #Output
       stats  =  getPopStats(gs)
+      stats[,prop := Count/ParentCount]
       write.csv(stats, file="population_statistics.csv", row.names=FALSE)
       
       #incProgress(1/(length(input$Files$name)), detail = paste0("Working on the file: ", input$Files$name[i], "     ", sample(quotes,1)))
