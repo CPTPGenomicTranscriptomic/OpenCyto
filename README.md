@@ -30,7 +30,6 @@ If a message like: "Update all/some/none?" appears in the Rstudio console just p
 
 Start an R session using RStudio and run this line:  
 ```
-shiny::runGitHub("OpenCyto", "mlebeur")
 shiny::runGitHub("OpenCyto", "CPTPGenomicTranscriptomic")
 
 ```
@@ -55,40 +54,55 @@ The application can crash (everything in grey, no interactivity) if you choose t
 Experts can try others Volumes (as currentDirectory, home, etc...) but they have to use the application on local.
 
 
-**2. Choose your output options:**
-
-  * Write file with high quality events only ("_hQC.fcs") will write a fcs file without any low quality events predicted by flowAI => biological events.
-  
-  * Write file with low quality events only ("_lQC.fcs") will write a fcs file without any high quality events predicted by flowAI => artefactual/technical/... events.
-  
-  * Write file with both low (remove_from_all/QC < 10,000) and high (remove_from_all/QC > 10,000) quality events ("_QC.fcs"). This file contains a new parameter (visible on flowJo) which allows the distinction between the low and the high quality events.
-  
-
-**3. Upload your FCS files:**
+**2. Choose your fcs files:**
 
 You can upload from one to multiple \*.fcs files.
 
 The files must have the .fcs extension to appear in the selection browser.
 
-One of the parameter should be time/Time/TIME else the application will run forever.
+No matter if there is no time/Time/TIME parameter.
 
 Be aware that The application is limited to 500Mo of RAM.
 
-Multiple runs can be preferable in case of big data analyses.
+The blue progress bar should move until the message \"upload complete\" appears.
+
+These files must be all present in the same workspace.
+
+**3. Upload your workspace file:**
+
+You can upload one \*.wsp file.
+
+The files must have the .wsp extension to appear in the selection browser.
+
+The blue progress bar should move until the message \"upload complete\" appears.
+
+**3. Upload your gating strategy:**
+
+You can upload one gating strategy file.
+
+The files must have the text/csv, text/comma-separated-values, text/plain or .csv extension to appear in the selection browser.
+
+The content of the gating strategy file is describe here:
+https://bioconductor.org/packages/release/bioc/vignettes/openCyto/inst/doc/HowToWriteCSVTemplate.html
+https://bioconductor.org/packages/release/bioc/vignettes/openCyto/inst/doc/HowToAutoGating.html
 
 The blue progress bar should move until the message \"upload complete\" appears.
 
 
 **4. Wait for the computation:**
 
-Once the upload competed a progress boxe should appears in the rigth-bottom corner. It indicates that the application is running and which input file is processed.
+Once the uploads completed a progress boxe should appears in the rigth-bottom corner. It indicates that the application is running and which input file is processed.
 
 
 **5. The results:**
 
 Once the progress box has disappeared.
 
-The inputs files should be listed below \"Remember your input files were:\".
+The inputs files should be listed below \"Remember your input FCS files were:\".
+
+The inputs files should be listed below \"Remember your input workspace was:\".
+
+The inputs files should be listed below \"Remember your input gating strategy was:\".
 
 The ouput directory should appears below \"Remember your output directory was\".
 
@@ -100,9 +114,6 @@ The results should be located at the output directory.
 
 The webpage should look like this!
 
-![alt text](https://github.com/CPTPGenomicTranscriptomic/FlowAIAll/blob/master/FlowAI_interface.png)
+![alt text](https://github.com/CPTPGenomicTranscriptomic/OpenCyto/blob/master/Opencyto_interface.png)
 
 
-## Comments
-
-The package flowAI seems to filtered much more data than flowClean but it's faster.
