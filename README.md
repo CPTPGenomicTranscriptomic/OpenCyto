@@ -75,7 +75,7 @@ The files must have the .wsp extension to appear in the selection browser.
 
 The blue progress bar should move until the message \"upload complete\" appears.
 
-**3. Upload your gating strategy:**
+**4. Upload your gating strategy:**
 
 You can upload one gating strategy file.
 
@@ -88,12 +88,12 @@ https://bioconductor.org/packages/release/bioc/vignettes/openCyto/inst/doc/HowTo
 The blue progress bar should move until the message \"upload complete\" appears.
 
 
-**4. Wait for the computation:**
+**5. Wait for the computation:**
 
 Once the uploads completed a progress boxe should appears in the rigth-bottom corner. It indicates that the application is running and which input file is processed.
 
 
-**5. The results:**
+**6. The results:**
 
 Once the progress box has disappeared.
 
