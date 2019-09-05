@@ -82,7 +82,9 @@ You can upload one gating strategy file.
 The files must have the text/csv, text/comma-separated-values, text/plain or .csv extension to appear in the selection browser.
 
 The content of the gating strategy file is describe here:
+
 https://bioconductor.org/packages/release/bioc/vignettes/openCyto/inst/doc/HowToWriteCSVTemplate.html
+
 https://bioconductor.org/packages/release/bioc/vignettes/openCyto/inst/doc/HowToAutoGating.html
 
 The blue progress bar should move until the message \"upload complete\" appears.
