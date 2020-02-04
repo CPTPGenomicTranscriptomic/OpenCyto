@@ -64,6 +64,7 @@ server <- function(input, output) {
   output$inputWorkspace <- renderText({
     req(input$workspace)
     print(input$workspace$name)
+    print(input$workspace$datapath)
   })
     
   output$inputGatingStrategy <- renderText({
@@ -127,8 +128,8 @@ server <- function(input, output) {
       incProgress(0/4, message = "Load the workspace:", detail = sample(quotes,1))
       #ws <- openWorkspace(input$workspace$name)
       ws <- open_flowjo_xml(input$workspace$datapath)
-      #gs <- parseWorkspace(ws, name = getSamples(ws)$sampleID)
-      gs <- parseWorkspace(ws, name = 1)
+      gs <- parseWorkspace(ws, name = getSamples(ws)$sampleID)
+      #gs <- parseWorkspace(ws, name = 1)
       nbsamples = length(getSamples(ws)$sampleID)
       #incProgress(((1 + (i - 1) * nbsamples) / 4 * nbsamples), message = "Load the workspace:", detail = sample(quotes,1))
       for(i in getSamples(ws)$sampleID){
