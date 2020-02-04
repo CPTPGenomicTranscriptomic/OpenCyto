@@ -125,7 +125,8 @@ server <- function(input, output) {
       #Load the workspace
       print(paste0("The input workspace is:",input$workspace$name))
       incProgress(0/4, message = "Load the workspace:", detail = sample(quotes,1))
-      ws <- openWorkspace(input$workspace$name)
+      #ws <- openWorkspace(input$workspace$name)
+      ws <- open_flowjo_xml(input$workspace$name)
       #gs <- parseWorkspace(ws, name = getSamples(ws)$sampleID)
       gs <- parseWorkspace(ws, name = 1)
       nbsamples = length(getSamples(ws)$sampleID)
