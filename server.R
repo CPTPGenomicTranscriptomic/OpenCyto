@@ -63,6 +63,8 @@ server <- function(input, output) {
     
   output$inputWorkspace <- renderText({
     req(input$workspace)
+    req(input$Files)
+    file.copy(input$Files$datapath,dirname(input$workspace$datapath))
     print(input$workspace$name)
     print(input$workspace$datapath)
   })
