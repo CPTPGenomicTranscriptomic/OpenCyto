@@ -160,7 +160,7 @@ server <- function(input, output) {
       incProgress(2/4, message = "Read FCS files:", detail = sample(quotes,1))
       #incProgress((( 3 + (i - 1) *  nbsamples) / 4 *  nbsamples), message = "Read FCS files:", detail = sample(quotes,1))
       print(paste0("The input FCS is:",input$Files$name))
-      ncfs  <- read.ncdfFlowSet(input$Files$name)
+      ncfs  <- read.ncdfFlowSet(input$Files$datapath)
       gs <- GatingSet(ncfs)
       gs
         
